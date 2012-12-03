@@ -12,6 +12,9 @@
 <head>
 <meta charset="<?php bloginfo( 'charset' ); ?>" />
 <meta name="viewport" content="width=device-width" />
+
+<script type="text/javascript" src="http://fast.fonts.com/jsapi/7e158b78-d36c-416e-a793-6fa09d40e40f.js"></script>
+
 <title><?php
 	/*
 	 * Print the <title> tag based on what is being viewed.
@@ -45,18 +48,30 @@
 <body <?php body_class(); ?>>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
+
 	<header id="masthead" class="site-header" role="banner">
-		<hgroup>
+		<div class="top-links">
+			<ul>
+				<li><a href="#">Energy Conference</a></li>
+				<li><a href="#">Clean Energy Prize</a></li>
+				<li><a href="#">Energy Night</a></li>
+				<li><a href="#">Energy Finance Forum</a></li>
+			</ul>
+		</div><!-- .top-links -->
+
+		<div class="main-header">
 			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
-			<h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
-		</hgroup>
+			<div class="member-login"><a href="#">Member Login</a></div>
+		</div><!-- .main-header -->
 
-		<nav role="navigation" class="site-navigation main-navigation">
-			<h1 class="assistive-text"><?php _e( 'Menu', 'mitec' ); ?></h1>
-			<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mitec' ); ?>"><?php _e( 'Skip to content', 'mitec' ); ?></a></div>
+		<div class="nav-wrapper">
+			<nav role="navigation" class="site-navigation main-navigation">
+				<h1 class="assistive-text"><?php _e( 'Menu', 'mitec' ); ?></h1>
+				<div class="assistive-text skip-link"><a href="#content" title="<?php esc_attr_e( 'Skip to content', 'mitec' ); ?>"><?php _e( 'Skip to content', 'mitec' ); ?></a></div>
 
-			<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
-		</nav><!-- .site-navigation .main-navigation -->
+				<?php wp_nav_menu( array( 'theme_location' => 'primary' ) ); ?>
+			</nav><!-- .site-navigation .main-navigation -->
+		</div><!-- .nav-wrapper -->
 	</header><!-- #masthead .site-header -->
 
 	<div id="main" class="site-main">
