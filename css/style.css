@@ -437,7 +437,7 @@ a {
     margin-left: 5em; }
     /* line 79, ../scss/style.scss */
     .site-header .top-links li:before {
-      background: url(../images/top-links.png);
+      background: url(../inc/images/top-links.png);
       content: "";
       display: inline-block;
       width: 8px;
@@ -467,7 +467,7 @@ a {
     clear: both; }
   /* line 115, ../scss/style.scss */
   .site-header .main-header .site-title {
-    background: url(../images/logo.png) no-repeat;
+    background: url(../inc/images/logo.png) no-repeat;
     display: block;
     float: left;
     text-indent: -100%;
@@ -475,7 +475,7 @@ a {
     height: 58px; }
   /* line 123, ../scss/style.scss */
   .site-header .main-header .member-login a {
-    background: #fbfbfb url(../images/login-arrow.png) no-repeat 11px 11px;
+    background: #fbfbfb url(../inc/images/login-arrow.png) no-repeat 11px 11px;
     border: 2px solid white;
     box-shadow: inset 0 0 3px rgba(0, 0, 0, 0.1), 2px 2px 3px rgba(0, 0, 0, 0.2);
     color: #b1931c;
@@ -842,7 +842,7 @@ a {
   .sharing .share-button {
     width: 2.8em;
     height: 2.8em;
-    background: url("../images/share-buttons.png") no-repeat;
+    background: url("../inc/images/share-buttons.png") no-repeat;
     text-indent: 100%;
     white-space: nowrap;
     overflow: hidden;
