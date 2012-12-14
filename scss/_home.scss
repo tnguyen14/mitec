@@ -1,0 +1,110 @@
+/* HOMEPAGE */
+
+.homepage-feature {
+	width: 100%;
+	min-height: 67.4em;
+	background: url(../images/homepage-feature.png) no-repeat center center fixed;
+	background-size: cover;
+	position: relative;
+	.main-headline {
+		margin: 0 auto;
+		width: 87em;
+		padding-top: 40em;
+		position: relative;
+		p {
+			background: rgba(57, 2, 2, 0.75); // #390202 = rgb(57,2,2)
+			color: white;
+			font-size: 3em;
+			margin: 0;
+			padding: 2rem;
+			text-align: center;
+			text-transform: uppercase;
+		}
+		&:before,
+		&:after {
+			background: rgba(0,0,0,0.5);
+			content: "";
+			display: block;
+			width: 5em;
+			height: 20em;
+			position: absolute;
+			bottom: -15.5em;
+			left: -5.5em;
+		}
+		&:after {
+			left: 87.5em;
+		}
+	}
+	.supporting-content {
+		background: rgba(0,0,0,0.5);
+		margin: 0.5em auto 0;
+		position: relative;
+		overflow: hidden;
+		width: 88em;
+		height: 15em;
+		.features {
+			width: 20000em;
+			position: absolute;
+		}
+		.feature {
+			box-sizing: border-box;
+			float: left;
+			width: 88em;
+			padding: 2rem 3rem;
+			p {
+				color: white;
+				font-size: 1.8em;
+				padding: 2rem 3rem;
+				text-align: center;
+			}
+			a {
+				color: $gold-text;
+				font-size: 1.1rem;
+				text-transform: uppercase;
+			}
+			
+		}
+	}
+}
+.tabs-wrap {
+	background: black;
+	width: 100%;
+	height: 1.6em;
+	.bottom-tabs {
+		margin: 0 auto;
+		width: 98em;
+		@include group;
+	}
+	.tab {
+		background-color: $dark-gold;
+		direction: block;
+		height: 1.6em;
+		float: left;
+		&.active {
+			background-color: $gold;
+		}
+	}
+	.tab-1 {
+		width: 100%;
+	}
+	.tab-2 {
+		width: 48.9em;
+		&:first-child {
+			margin-right: 1px;
+		}
+	}
+	.tab-3 {
+		width: 32.6em;
+		margin-right: 1px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.tab-4 {
+		width: 24.42em;
+		margin-right: 1px;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+}

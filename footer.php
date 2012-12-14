@@ -12,11 +12,18 @@
 	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
-		<div class="site-info">
-			<?php do_action( 'mitec_credits' ); ?>
-			<a href="http://wordpress.org/" title="<?php esc_attr_e( 'A Semantic Personal Publishing Platform', 'mitec' ); ?>"><?php printf( __( 'Proudly powered by %s', 'mitec' ), 'WordPress' ); ?></a>
-			<span class="sep"> | </span>
-		</div><!-- .site-info -->
+		<div class="footer-inner">
+			<div class="copyright">© Copyright 2012 MIT Energy Club</div>
+			<div class="sharing">
+				<div class="stay-connected">Stay Connected</div>
+				<a class="share-button facebook-button" href="#" target="_blank">Facebook</a>
+				<a class="share-button twitter-button" href="#" target="_blank">Twitter</a>
+				<a class="share-button linkedin-button" href="#" target="_blank">LinkedIn</a>
+				<a class="share-button newsletter-button" href="#" target="_blank">Newsletter</a>
+				<a class="share-button contact-button" href="#" target="_blank">Contact</a>
+				<a class="share-button addthis-button" href="#" target="_blank">Share</a>
+			</div><!--sharing-->
+		</div><!--footer-inner-->
 	</footer><!-- #colophon .site-footer -->
 </div><!-- #page .hfeed .site -->
 

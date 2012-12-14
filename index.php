@@ -13,7 +13,7 @@
  */
 
 get_header(); ?>
-
+<div class="wrap">
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -45,5 +45,6 @@ get_header(); ?>
 			</div><!-- #content .site-content -->
 		</div><!-- #primary .content-area -->
 
-<?php get_sidebar(); ?>
+	<?php get_sidebar(); ?>
+</div><!--wrap-->
 <?php get_footer(); ?>

@@ -120,3 +120,10 @@ add_action( 'wp_enqueue_scripts', 'mitec_scripts' );
  * Implement the Custom Header feature
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
+
+
+/** 
+ * add image sizes
+ */
+
+add_image_size('cover-photo', 1400, 9999);

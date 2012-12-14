@@ -1,0 +1,495 @@
+/* =Resetting
+----------------------------------------------- */
+@import "_reset";
+
+/* =Global
+----------------------------------------------- */
+@import "_global";
+
+/* SCSS 
+---------------------------------------- */
+
+@import "compass/css3";
+
+/* Variables */
+$carbon: #505050;
+$gray-text: #7b7b7b;
+$gray: #a6a6a6;
+$light-gray: #e1e1e1;
+$gold: #b1931c;
+$dark-gold: #645206;
+$gold-text: #dcb000;
+$maroon: #390202;
+$maroon-text: #761313;
+
+/* Mixins */
+@mixin group {
+	&:after {
+		content: "";
+		display: table;
+		clear: both;
+	}
+}
+
+// Scott Kellum Image Replacement Method
+// URL: http://css-tricks.com/examples/ImageReplacement/
+@mixin image-replacement ( $url, $width, $height ) {
+	width: $width;
+	height: $height;
+	background: url($url) no-repeat;
+	text-indent: 100%;
+	white-space: nowrap;
+	overflow: hidden;
+}
+
+// Use opacity with hex color without converting to rgba
+@mixin background-color ($color, $opacity: 0) {
+	background-color: $color;
+	@include opacity($opacity);
+}
+/* =Layout
+----------------------------------------------- */
+.site-header,
+.nav-wrapper {
+	width: 100%;
+}
+.top-links,
+.main-header,
+.site-navigation,
+.footer-inner,
+.content-wrap {
+	width: 98em;
+}
+
+/* =Header
+----------------------------------------------- */
+.site-header {
+	.top-links {
+		height: 3.2em;
+		margin: 0 auto;
+		padding-left: 5em;
+		@media (min-width: 103em) {
+			width: 103em;
+		}
+		box-shadow: 0 5px 6px -4px rgba(0,0,0,0.2);
+		li {
+			float: left;
+			list-style: none;
+			margin-left: 5em;
+			&:before {
+				background: url(../images/top-links.png);
+				content:  "";
+				display: inline-block;
+				width: 8px;
+				height: 8px;
+				margin: 0 0.4em 0.1em 0;
+			}
+			a {
+				color: $gray-text;
+				font-size: 1.4em;
+				text-transform: uppercase;
+			}
+			&:nth-child(2),
+			&:first-child + li {
+				&:before {
+					background-position: 8px 0;
+				}
+			}
+			&:nth-child(3),
+			&:first-child + li + li {
+				&:before {
+					background-position: 16px 0;
+				}
+			}
+			&:nth-child(4),
+			&:first-child + li + li + li {
+				&:before {
+					background-position: 24px 0;
+				}
+			}
+		}
+	}
+	.main-header {
+		margin: 3em auto;
+		@include group;
+		.site-title {
+			background: url(../images/logo.png) no-repeat;
+			display: block;
+			float: left;
+			text-indent: -100%;
+			width: 387px;
+			height: 58px;
+		}
+		.member-login a {
+			background: #fbfbfb url(../images/login-arrow.png) no-repeat 11px 11px;
+			border: 2px solid white;
+			box-shadow: inset 0 0 3px rgba(0,0,0,0.1),
+						2px 2px 3px rgba(0,0,0,0.2);
+			color: $gold;
+			float: right;
+			font-size: 1.6em;
+			line-height: 1;
+			padding: 1.5rem 4rem 1rem; 
+			text-transform: uppercase;
+			&:hover {
+				background-color: #eaeaea;
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* =Menu
+----------------------------------------------- */
+
+.nav-wrapper {
+	height: 4.6em;
+	background: $gold;
+	.site-navigation {
+		@include group;
+		clear: both;
+		display: block;
+		margin: 0 auto;
+		ul {
+			list-style: none;
+			margin: 0 0 0 -2em;
+			padding-left: 0;
+			ul {
+				box-shadow: 0 3px 3px rgba(0,0,0,0.2);
+				display: none;
+				float: left;
+				position: absolute;
+				top: 1.5em;
+				left: 0;
+				z-index: 99999;
+				ul {
+					left: 100%;
+					top: 0;
+				}
+				a {
+					width: 200px;
+				}
+			}
+		}
+		li {
+			border-right: 2px solid $dark-gold;
+			float: left;
+			position: relative;
+			padding: 1.5rem 2rem;
+			&:last-child {
+				border: none;
+			}
+			&:hover {
+				background-color: $dark-gold;
+				cursor: pointer;
+			}
+		}
+		a {
+			color: white;
+			font-size: 1.6em;
+			line-height: 1;
+			display: block;
+			text-transform: uppercase;
+			&:hover {
+				text-decoration: none;
+			}
+		}
+	}
+}
+
+/* Small menu */
+.menu-toggle {
+	cursor: pointer;
+}
+.main-small-navigation .menu {
+	display: none;
+}
+
+/* =Content
+----------------------------------------------- */
+
+/* HOMEPAGE */
+
+@import "_home";
+
+/* Main Standard Content */
+
+.cover-photo {
+	max-height: 35rem;
+	overflow: hidden;
+	img {
+		width: 100%;
+		height: auto;
+	}
+}
+
+.content-wrap {
+	@include group;
+	margin: -5.9em auto 0;
+	position: relative;
+	z-index: 2;
+}
+
+.widget-area {
+	@include box-shadow(rgba(0,0,0,0.3) 0 1px 4px 1px);
+	background-color: #fdfdfd;
+	border: 3px solid #f1eee4;
+	width: 100%;
+	//box-shadow: 0 1px 4px 1px rgba(0,0,0,0.3);
+	@media (min-width: 50em) { // min width 800px / 16
+		float: left;
+		width: 27.5510204%; // 270px / 980px
+	}
+}
+.content-area {
+	width: 100%;
+	@media (min-width: 50em) { // min width 800px / 16
+		box-sizing: border-box;
+		float: right;
+		width: 71.4285714%; // 700px / 980px
+	}
+}
+
+.site-content {
+	.entry-header {
+		@include background-color($maroon, 0.75);
+		margin-left: -3px; // To make up for the box-shadow on the sidebar
+		padding: 1.5em 0 1em 5.7142857%; //38px / 665px;
+		.entry-title {
+			color: white;
+			font-size: 2.8em;
+			text-transform: uppercase;
+		}
+	}
+	.entry-content {
+		padding-left: 5.2631579%; // 35px / 665px
+		line-height: 1.4;
+		h1 {
+			color: $maroon-text;
+			font-size: 2.8em;
+		}
+		h2 {
+			font-size: 1.9em;
+		}
+		p {
+			color: $carbon;
+			font-size: 1.4em;
+		}
+	}
+}
+.sticky {
+}
+.hentry {
+	margin: 0 0 1.5em;
+}
+.entry-meta {
+	clear: both;
+}
+.byline {
+	display: none;
+}
+.single .byline,
+.group-blog .byline {
+	display: inline;
+}
+.entry-content,
+.entry-summary {
+	margin: 1.5em 0 0;
+}
+.page-links {
+	clear: both;
+	margin: 0 0 1.5em;
+}
+
+
+/* =Asides
+----------------------------------------------- */
+
+.blog .format-aside .entry-title,
+.archive .format-aside .entry-title {
+	display: none;
+}
+
+.sidebar-nav {
+	margin-bottom: 3.5em;
+	text-transform: uppercase;
+	h1 {
+		color: $gold-text;
+		font-size: 1.2em;
+		padding: 1.5em 0 1em 7.4074074%; //20px / 270px
+	}
+	li {
+		border-top: 1px solid $light-gray;
+		cursor: pointer;
+		padding: 1em 0 1em 7.4074074%; // 20px / 270px
+		a {
+			color: $gray-text;
+			font-size: 1.4rem;
+		}
+		&.current_page_item,
+		&:hover {
+			background-color: $light-gray;
+		}
+	}
+}
+
+/* =Footer
+----------------------------------------------- */
+.footer-inner {
+	margin: 2em auto;
+	@include group;
+}
+.copyright {
+	color: $gray-text;
+	float: left;
+	margin-top: 1em;
+}
+.sharing {
+	float: right;
+	@media (min-width: 25em) { // 400px / 16
+		min-width: 40em;
+	}
+	.stay-connected {
+		border-right: 1px solid $light-gray;
+		font-size: 1.2em;
+		margin-right: 1rem;
+		padding: 1rem;
+		@media (min-width: 25em) {
+			float: left;
+		}
+	}
+	.share-button {
+		// imageReplacement ($url, $width, $height)
+		@include image-replacement("../images/share-buttons.png", 2.8em, 2.8em );
+		display: block;
+		float: left;
+		margin: 0.3em 1em;
+		&:last-child {
+			margin-right: 0;
+		}
+	}
+	.twitter-button {
+		background-position: -29px 0;
+	}
+	.linkedin-button {
+		background-position: -58px 0;
+	}
+	.newsletter-button {
+		background-position: -87px 0;
+	}
+	.contact-button {
+		background-position: -116px 0;
+	}
+	.addthis-button {
+		background-position: -145px 0;
+	}
+}
+
+/* =Media
+----------------------------------------------- */
+
+.site-header img,
+.entry-content img,
+.comment-content img,
+.widget img {
+	max-width: 100%; /* Fluid images for posts, comments, and widgets */
+}
+.site-header img,
+.entry-content img,
+img[class*="align"],
+img[class*="wp-image-"] {
+	height: auto; /* Make sure images with WordPress-added height and width attributes are scaled correctly */
+}
+.site-header img,
+.entry-content img,
+img.size-full {
+	max-width: 100%;
+	width: auto; /* Prevent stretching of full-size images with height and width attributes in IE8 */
+}
+.entry-content img.wp-smiley,
+.comment-content img.wp-smiley {
+	border: none;
+	margin-bottom: 0;
+	margin-top: 0;
+	padding: 0;
+}
+.wp-caption {
+	border: 1px solid #ccc;
+	max-width: 100%;
+}
+.wp-caption.aligncenter,
+.wp-caption.alignleft,
+.wp-caption.alignright {
+	margin-bottom: 1.5em;
+}
+.wp-caption img {
+	display: block;
+	margin: 1.2% auto 0;
+	max-width: 98%;
+}
+.wp-caption-text {
+	text-align: center;
+}
+.wp-caption .wp-caption-text {
+	margin: 0.8075em 0;
+}
+.site-content .gallery {
+	margin-bottom: 1.5em;
+}
+.gallery-caption {
+}
+.site-content .gallery a img {
+	border: none;
+	height: auto;
+	max-width: 90%;
+}
+.site-content .gallery dd {
+	margin: 0;
+}
+.site-content .gallery-columns-4 .gallery-item {
+}
+.site-content .gallery-columns-4 .gallery-item img {
+}
+
+/* Make sure embeds and iframes fit their containers */
+embed,
+iframe,
+object {
+	max-width: 100%;
+}
+
+
+/* =Navigation
+----------------------------------------------- */
+
+.site-content .site-navigation {
+	margin: 0 0 1.5em;
+	overflow: hidden;
+}
+.site-content .nav-previous {
+	float: left;
+	width: 50%;
+}
+.site-content .nav-next {
+	float: right;
+	text-align: right;
+	width: 50%;
+}
+
+/* =Comments
+----------------------------------------------- */
+
+.bypostauthor {
+}
+
+/* =Widgets
+----------------------------------------------- */
+
+.widget {
+	margin: 0 0 1.5em;
+}
+
+/* Search widget */
+#searchsubmit {
+	display: none;
+}

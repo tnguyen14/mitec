@@ -60,7 +60,7 @@
 		</div><!-- .top-links -->
 
 		<div class="main-header">
-			<h1 class="site-title"><a href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a></h1>
+			<a class="site-title" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
 			<div class="member-login"><a href="#">Member Login</a></div>
 		</div><!-- .main-header -->
 
