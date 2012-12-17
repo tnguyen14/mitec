@@ -13,7 +13,13 @@
  */
 
 get_header(); ?>
-<div class="wrap">
+<div class="cover-photo">
+		<?php if (has_post_thumbnail()) {
+			the_post_thumbnail('cover-photo');
+		}?>
+</div><!--cover-photo-->
+<div class="content-wrap">
+	
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -46,5 +52,5 @@ get_header(); ?>
 		</div><!-- #primary .content-area -->
 
 	<?php get_sidebar(); ?>
-</div><!--wrap-->
+</div><!--content-wrap-->
 <?php get_footer(); ?>

@@ -38,7 +38,24 @@
 			// Timely Content Module
 			?>
 				<aside class="timely-content">
-					<h1></h1>
+					<?php 
+					$home_id = 6;
+					if (get_field('use_default_timely_content') ) :
+						$timely_header = get_field('timely_content_header', $home_id);
+						$timely_support = get_field('timely_content_supporting_text', $home_id);
+						$timely_image = wp_get_attachment_image_src(get_field('timely_content_image', $home_id), 'timely-content');
+						$timely_link = get_field('timely_content_link', $home_id);
+					else :
+						$timely_header = get_field('timely_content_header');
+						$timely_support = get_field('timely_content_supporting_text');
+						$timely_image = wp_get_attachment_image_src(get_field('timely_content_image'), 'timely-content');
+						$timely_link = get_field('timely_content_link');
+					endif;
+					?>
+						<h1><?php echo $timely_header;?></h1>
+						<img src="<?php echo $timely_image[0];?>" width="<?php echo $timely_image[1];?>" height="<?php echo $timely_image[2];?>"/>
+						<p><?php echo $timely_support;?></p>
+						<a class="learn-more" href="<?php echo $timely_link;?>">Learn More</a>
 				</aside>
 			<?php /*
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>

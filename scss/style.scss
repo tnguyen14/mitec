@@ -47,6 +47,16 @@ $maroon-text: #761313;
 	background-color: $color;
 	@include opacity($opacity);
 }
+
+// Learn more link style
+@mixin learn-more-link {
+	color:#ab8b0a; 
+	font-size: 1.1em;
+	text-transform: uppercase;
+	&:hover {
+		text-decoration: underline;
+	}
+}
 /* =Layout
 ----------------------------------------------- */
 .site-header,
@@ -59,6 +69,33 @@ $maroon-text: #761313;
 .footer-inner,
 .content-wrap {
 	width: 98em;
+}
+
+/* =Repeatable Pattern
+----------------------------------------------- */
+.cta-button {
+	background-color: #f6f3e5;
+	border: 2px solid white;
+	color: #ad8f12; // @TODO: check whether ad8f12 is close to gold-text
+	display: block;
+	float: left;
+	font-family: 'Helvetica Neue', 'Helvetica', sans-serif;
+	font-size: 1.4rem;
+	font-weight: bold;
+	padding: 1rem 3.5rem 1rem 2.5rem;
+	position: relative;
+	text-transform: uppercase;
+	@include box-shadow(0 0 2px rgba(0,0,0,0.2), 0 0 1px rgba(0,0,0,0.2) inset);
+	&:after {
+		content: "";
+		background: url(../inc/images/cta-arrow.png) no-repeat;
+		display: block;
+		width: 8px;
+		height: 11px;
+		position: absolute;
+		right: 1.8rem;
+		bottom: 1.4rem;
+	}
 }
 
 /* =Header
@@ -76,6 +113,7 @@ $maroon-text: #761313;
 			float: left;
 			list-style: none;
 			margin-left: 5em;
+			padding-top: 1rem;
 			&:before {
 				background: url(../inc/images/top-links.png);
 				content:  "";
@@ -172,7 +210,7 @@ $maroon-text: #761313;
 			}
 		}
 		li {
-			border-right: 2px solid $dark-gold;
+			border-right: 2px solid #977d18;
 			float: left;
 			position: relative;
 			padding: 1.5rem 2rem;
@@ -180,7 +218,7 @@ $maroon-text: #761313;
 				border: none;
 			}
 			&:hover {
-				background-color: $dark-gold;
+				background-color: #977d18;
 				cursor: pointer;
 			}
 		}
@@ -213,9 +251,14 @@ $maroon-text: #761313;
 @import "_home";
 
 /* Main Standard Content */
-
+.site-main {
+	border-bottom: 2px solid $light-gray;
+	padding-bottom: 6rem;
+	@include group;
+}
 .cover-photo {
 	max-height: 35rem;
+	min-height: 5.9em;
 	overflow: hidden;
 	img {
 		width: 100%;
@@ -224,18 +267,18 @@ $maroon-text: #761313;
 }
 
 .content-wrap {
-	@include group;
 	margin: -5.9em auto 0;
 	position: relative;
 	z-index: 2;
+	@include group;
 }
 
 .widget-area {
-	@include box-shadow(rgba(0,0,0,0.3) 0 1px 4px 1px);
 	background-color: #fdfdfd;
 	border: 3px solid #f1eee4;
 	width: 100%;
 	//box-shadow: 0 1px 4px 1px rgba(0,0,0,0.3);
+	@include box-shadow(rgba(0,0,0,0.3) 0 1px 4px 1px);
 	@media (min-width: 50em) { // min width 800px / 16
 		float: left;
 		width: 27.5510204%; // 270px / 980px
@@ -333,8 +376,57 @@ $maroon-text: #761313;
 	}
 }
 
+/* Tiemly Content */
+.timely-content {
+	// TO-DO: linear background gradient
+	border-top: 1px solid $light-gray;
+	line-height: 1.4;
+	padding: 1em 0 1em 7.4074074%; // 20px / 270px
+	h1 {
+		font-size: 1.5em;
+		margin-bottom: 1em;
+	}
+	img {
+		max-width: 85.1851852%; // 230px / 270px
+		height: auto;
+		margin-bottom: 1em;
+	}
+	p {
+		color: $gray-text;
+		margin-bottom: 0.5em;
+	}
+	a {
+		@include learn-more-link;
+	}
+}
+
 /* =Footer
 ----------------------------------------------- */
+.sponsor-footer-wrap {
+	border-bottom: 2px solid $light-gray;
+	width: 100%;
+}
+.sponsor-footer {
+	margin: 0 auto;
+	width: 98rem;
+	@include group;
+	h1 {
+		color: $maroon-text;
+		float: left;
+		font-size: 1.5rem;
+		padding-top: 5rem;
+		text-align: right;
+		width: 10.5rem;
+		height: 7rem;
+	}
+	.sponsor-logo {
+		float: left;
+		width: 17.5rem;
+		height: 12rem;
+		background-repeat: no-repeat;
+	}
+}
+
 .footer-inner {
 	margin: 2em auto;
 	@include group;

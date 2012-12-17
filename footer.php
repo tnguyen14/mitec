@@ -12,6 +12,19 @@
 	</div><!-- #main .site-main -->
 
 	<footer id="colophon" class="site-footer" role="contentinfo">
+		<div class="sponsor-footer-wrap">
+			<div class="sponsor-footer">
+				<h1>Sponsor Organizations</h1>
+				<?php 
+				$sponsor_page_id = 75;
+				$sponsors = get_field('sponsor', $sponsor_page_id);
+				foreach ($sponsors as $sponsor):
+					$sponsor_image = wp_get_attachment_image_src($sponsor['sponsor_image'], 'sponsor-logo');?>
+					<div class="sponsor-logo" style="background-image: url(<?php echo $sponsor_image[0];?>)">
+					</div><!--sponsor-logo-->
+				<?php endforeach;?>
+			</div><!--sponsor-footer-->
+		</div><!--sponsor-footer-wrap-->
 		<div class="footer-inner">
 			<div class="copyright">© Copyright 2012 MIT Energy Club</div>
 			<div class="sharing">
