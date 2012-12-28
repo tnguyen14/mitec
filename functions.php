@@ -130,3 +130,4 @@ add_image_size('cover-photo', 1400, 9999);
 add_image_size('timely-content', 230, 110, true);
 add_image_size('homepage-module', 280, 145, true);
 add_image_size('sponsor-logo', 175, 120);
+add_image_size('team-member', 120, 120, true);

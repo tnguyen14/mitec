@@ -40,16 +40,16 @@
 				<aside class="timely-content">
 					<?php 
 					$home_id = 6;
-					if (get_field('use_default_timely_content') ) :
-						$timely_header = get_field('timely_content_header', $home_id);
-						$timely_support = get_field('timely_content_supporting_text', $home_id);
-						$timely_image = wp_get_attachment_image_src(get_field('timely_content_image', $home_id), 'timely-content');
-						$timely_link = get_field('timely_content_link', $home_id);
-					else :
+					if (get_field('use_custom_timely_content') ) :
 						$timely_header = get_field('timely_content_header');
 						$timely_support = get_field('timely_content_supporting_text');
 						$timely_image = wp_get_attachment_image_src(get_field('timely_content_image'), 'timely-content');
 						$timely_link = get_field('timely_content_link');
+					else :
+						$timely_header = get_field('timely_content_header', $home_id);
+						$timely_support = get_field('timely_content_supporting_text', $home_id);
+						$timely_image = wp_get_attachment_image_src(get_field('timely_content_image', $home_id), 'timely-content');
+						$timely_link = get_field('timely_content_link', $home_id);
 					endif;
 					?>
 						<h1><?php echo $timely_header;?></h1>
@@ -57,6 +57,19 @@
 						<p><?php echo $timely_support;?></p>
 						<a class="learn-more" href="<?php echo $timely_link;?>">Learn More</a>
 				</aside>
+
+				<aside class="facebook-sidebar">
+					<div class="facebook-outer">
+						<div class="fb-like-box" 
+							data-href="<?php echo esc_url(get_field('facebook_page', 'options'));?>" 
+							data-width="275" 
+							data-show-faces="true" 
+							data-stream="false" 
+							data-header="false"
+							data-border-color="#FDFDFD">
+						</div> 
+					</div><!--facebookOuter-->
+				</aside><!--facebook-sidebar-->
 			<?php /*
 			<?php if ( ! dynamic_sidebar( 'sidebar-1' ) ) : ?>
 

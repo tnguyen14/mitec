@@ -46,6 +46,14 @@
 </head>
 
 <body <?php body_class(); ?>>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=535772989768560";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 <div id="page" class="hfeed site">
 	<?php do_action( 'before' ); ?>
 
@@ -61,7 +69,7 @@
 
 		<div class="main-header">
 			<a class="site-title" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<div class="member-login"><a href="#">Member Login</a></div>
+			<div class="member-login"><a href="#">Member Log In</a></div>
 		</div><!-- .main-header -->
 
 		<div class="nav-wrapper">
