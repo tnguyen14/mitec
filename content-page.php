@@ -36,7 +36,38 @@
 			<?php endif; // end IF get_field('presentations;) ?>
 		<?php endif; ?>
 
-		
+
+		<?php /* Calendar page */
+		if (is_page('Calendar')):?>
+			<div style="display:none">
+				<?php
+				echo do_shortcode( '[energyfolks_searchbar type=calendar-agenda]' );?>
+			</div>
+			<?php 
+			echo do_shortcode( '[energyfolks type="calendar-agenda" ShowSearchBar]' ); 
+		endif; // end IF Calendar page ?>
+
+		<?php /* Bulletings Page */
+		if (is_page('Bulletins')):
+			echo do_shortcode( '[energyfolks type=bulletins-stream]' );
+		endif; // end IF Bulletins page ?>
+
+		<?php /* Blog Page */
+		if (is_page('Blog')):
+			echo do_shortcode( '[energyfolks type=blog]' );
+		endif; // end IF Blog page ?>
+
+		<?php /* Jobs Page */
+		if (is_page('Jobs')):
+			echo do_shortcode( '[energyfolks type=jobs]' );
+		endif; // end IF Jobs page ?>
+
+		<?php /* Membership List Page */
+		if (is_page('Membership List')):
+			echo do_shortcode( '[energyfolks type=users restricttothread=21]' );
+		endif; // end IF Membership List page ?>
+
+
 
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mitec' ), 'after' => '</div>' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'mitec' ), '<span class="edit-link">', '</span>' ); ?>
