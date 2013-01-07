@@ -483,6 +483,42 @@ td.EnFolksMonthDays {
 	}
 }
 
+
+/* EXECUTIVE COMMITTEE PAGE */
+
+.team-members {
+	.team-member {
+		background-color: $lighter-gray;
+		border-bottom: 2px solid $light-gray;
+		margin-bottom: 1rem; 
+		padding: 1rem;
+		@include group;
+		img {
+			@media (min-width: 25em) { // 400px / 16
+				max-width: 15%;
+				float: left;
+			}
+			@media (min-width: 60em ) { //960px / 16
+				max-width: 100%;
+			}
+		}
+		.member-description {
+			float: right;
+			@media (min-width: 25em) { // 400px / 16
+				float: right;
+				width: 70%;
+				margin-left: 5%;
+			}
+			@media (min-width: 60em) {// 960px / 16
+				width: 76%;
+			}
+			h1 {
+				font-size: 1.9rem;
+			}
+		}
+	}
+}
+
 /* =Asides
 ----------------------------------------------- */
 
@@ -502,12 +538,15 @@ td.EnFolksMonthDays {
 	li {
 		border-top: 1px solid $light-gray;
 		cursor: pointer;
-		padding: 1em 0 1em 7.4074074%; // 20px / 270px
-		a {
+		
+		> a {
 			color: $gray-text;
+			display: block;
 			font-size: 1.4rem;
+			padding: 1rem 0 1rem 7.4074074%; // 20px / 270px
 		}
 		&.current_page_item,
+		&.current-cat,
 		&:hover {
 			background-color: $light-gray;
 		}

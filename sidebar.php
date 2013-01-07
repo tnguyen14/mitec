@@ -11,10 +11,14 @@
 			<?php /* Sidebar Area */
 
 			// Sidebar Nav
-			if (is_page() && !is_front_page()) : 
+			if (is_page() && !is_front_page() || is_post_type_archive( 'team_members' ) || is_tax( 'teams' )) : 
 				$ancestors = get_post_ancestors($post->ID);
-				$top_page = ($ancestors) ? $ancestors[0] : $post->ID;
 
+				if ( is_post_type_archive( 'team_members' ) || is_tax( 'teams' )):
+					$ancestors[0] = 26; // 26 is About section
+				endif;
+
+				$top_page = ($ancestors) ? $ancestors[0] : $post->ID;
 				$args = array(
 					'child_of' => $top_page,
 					'title_li' => '',
@@ -24,6 +28,31 @@
 				);
 				
 				$side_pages = wp_list_pages($args);
+				$url = get_bloginfo('url');
+
+				if ( 26 == $top_page ):
+					if ( is_post_type_archive( 'team_members' ) || is_tax( 'teams' )): // if is children of About section
+						$term_args = array(
+							'taxonomy'	=> 'teams',
+							'exclude'	=> 4, // exclude Executive Team
+							'hierarchical'	=> 0,
+							'title_li'	=> '',
+							'echo'		=> 0
+						);
+						$terms = wp_list_categories($term_args);
+						$terms = '<ul>' . $terms . '</ul>';
+						// prepend sub nav for terms to side pages
+						$side_pages = $terms . $side_pages;
+					endif; // IF is post type archive 'team_members' or taxonomy 'teams'
+
+					$class = '';
+					if (is_post_type_archive( 'team_members' )) :
+						$class .= 'current_page_item';
+					endif;
+					$exec_comm = '<li class="'. $class .'"><a href="' . $url . '/team_members/">Executive Committee</a></li>';
+					// prepend Executive Committee item to side pages
+					$side_pages = $exec_comm . $side_pages;
+				endif; // IF top page is 26
 			endif;
 
 			if ($side_pages) : ?>

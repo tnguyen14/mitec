@@ -70,6 +70,16 @@ function mitec_setup() {
 	 * Add support for the Aside Post Formats
 	 */
 	add_theme_support( 'post-formats', array( 'aside', ) );
+
+	/** 
+	* add image sizes
+	*/
+
+	add_image_size('cover-photo', 1400, 9999);
+	add_image_size('timely-content', 230, 110, true);
+	add_image_size('homepage-module', 280, 145, true);
+	add_image_size('sponsor-logo', 175, 120);
+	add_image_size('team-member', 120, 120, true);
 }
 endif; // mitec_setup
 add_action( 'after_setup_theme', 'mitec_setup' );
@@ -121,13 +131,25 @@ add_action( 'wp_enqueue_scripts', 'mitec_scripts' );
  */
 //require( get_template_directory() . '/inc/custom-header.php' );
 
-
-/** 
- * add image sizes
+/**
+ * Change the order of team members to arrange by menu order
+ *
  */
+function mitec_team_members_order( $query ) {
+	if ( ( $query->is_post_type_archive( 'team_members' ) || is_tax( 'teams' ) ) && $query->is_main_query() ) {
+		$query->set( 'orderby', 'menu_order' );
+		$query->set( 'order', 'ASC' );
+		if ( $query->is_post_type_archive( 'team_members' ) ):
+			$query->set( 'tax_query', array(
+					array(
+						'taxonomy' 	=> 'teams',
+						'field'		=> 'slug',
+						'terms'		=> 'executive-team'
+					)
+				)
+			);
+		endif;
+	}
+}
+add_action( 'pre_get_posts', 'mitec_team_members_order' );
 
-add_image_size('cover-photo', 1400, 9999);
-add_image_size('timely-content', 230, 110, true);
-add_image_size('homepage-module', 280, 145, true);
-add_image_size('sponsor-logo', 175, 120);
-add_image_size('team-member', 120, 120, true);
