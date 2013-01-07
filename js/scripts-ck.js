@@ -1,1 +1,1 @@
-jQuery(document).ready(function(e){e(".homepage-feature .supporting-content").scrollable({circular:!0}).autoscroll(1e4).navigator(".bottom-tabs")});
+jQuery(document).ready(function(e){e(".homepage-feature .supporting-content").scrollable({circular:!0}).autoscroll(1e4).navigator(".bottom-tabs");e("div.EnFolksListItem table").onmouseover=null;e('.EnFolksListItem span[id^="EnFolksScoreSpan"] a img').attr("src","huh?")});

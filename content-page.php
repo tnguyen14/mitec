@@ -44,12 +44,12 @@
 				echo do_shortcode( '[energyfolks_searchbar type=calendar-agenda]' );?>
 			</div>
 			<?php 
-			echo do_shortcode( '[energyfolks type="calendar-agenda" ShowSearchBar]' ); 
+			echo do_shortcode( '[energyfolks type="calendar-agenda" customcss=1 setcolor="B1931C"]' ); 
 		endif; // end IF Calendar page ?>
 
 		<?php /* Bulletings Page */
 		if (is_page('Bulletins')):
-			echo do_shortcode( '[energyfolks type=bulletins-stream]' );
+			echo do_shortcode( '[energyfolks type=bulletins-stream customcss=1]' );
 		endif; // end IF Bulletins page ?>
 
 		<?php /* Blog Page */
@@ -59,7 +59,7 @@
 
 		<?php /* Jobs Page */
 		if (is_page('Jobs')):
-			echo do_shortcode( '[energyfolks type=jobs]' );
+			echo do_shortcode( '[energyfolks type=jobs restricttothread=21]' );
 		endif; // end IF Jobs page ?>
 
 		<?php /* Membership List Page */

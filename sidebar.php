@@ -63,6 +63,7 @@
 						<div class="fb-like-box" 
 							data-href="<?php echo esc_url(get_field('facebook_page', 'options'));?>" 
 							data-width="275" 
+							data-height="258"
 							data-show-faces="true" 
 							data-stream="false" 
 							data-header="false"
