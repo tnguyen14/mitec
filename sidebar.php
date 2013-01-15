@@ -86,7 +86,9 @@
 						<p><?php echo $timely_support;?></p>
 						<a class="learn-more" href="<?php echo $timely_link;?>">Learn More</a>
 				</aside>
-
+				
+			<?php // Facebook Aside Module
+			?>
 				<aside class="facebook-sidebar">
 					<div class="facebook-outer">
 						<div class="fb-like-box" 

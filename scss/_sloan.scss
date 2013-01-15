@@ -1,0 +1,88 @@
+// Header Carousel
+.sloan {
+	.content-wrap {
+		margin-top: -12rem;
+	}
+	// Carousel
+	.entry-header{
+		height: 12rem;
+		margin-left: 0;
+		padding: 0;
+		.carousel-slide {
+			color: white;
+			height: 9.5rem;
+			padding: 1.5rem 0 1rem 0;
+			* {
+				padding-left: 4.5rem;
+				padding-right: 4rem;
+			}
+			h1 {
+				font-size: 2.2rem;
+				text-transform: uppercase;
+				margin-bottom: 1rem;
+			}
+			p {
+				font-size: 1.6rem;
+				margin-bottom: 0;
+				height: 3.8rem;
+				overflow: hidden;
+			}
+			a {
+				color: $gold-text;
+				font-size: 1.4rem;
+				text-transform: uppercase;
+				&:hover {
+					text-decoration: underline;
+				}
+			}
+		}
+	}
+
+	.bx-wrapper {
+		margin: 0 0 0 -3px;
+		.bx-viewport {
+			box-shadow: none;
+			border: none;
+			left: auto;
+			background: none;
+		}
+		.bx-prev {
+			left: 0.5rem;
+			background: url(../inc/images/assets.png) no-repeat 0 -34px;
+		}
+		.bx-next {
+			right: 0.5rem;
+			background: url(../inc/images/assets.png) no-repeat -32px -34px;
+		}
+	}
+
+	// Volunteers and Applicants
+	.sloan-feature {
+		@include list-item;
+		width: 100%;
+		@media (min-width: 31.25em) { // 500px / 16px
+			width:46.686747%; // 310px / 664px;
+			max-width: 32.5rem;
+		}
+		img {
+			margin-bottom: 2rem;
+			width: 100%;
+			max-width: 31rem;
+		}
+		h1 {
+			color: $maroon-text;
+			font-size: 1.5rem;
+		}
+		p {
+			font-size: 1.4rem;
+			height: 8.4rem;
+			overflow: hidden;
+		}
+	}
+	.volunteers {
+		float: left;
+	}
+	.applicants {
+		float: right;
+	}
+}

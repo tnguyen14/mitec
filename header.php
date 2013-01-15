@@ -45,7 +45,10 @@
 <?php wp_head(); ?>
 </head>
 
-<body <?php body_class(); ?>>
+<?php // adding page title as a class
+$page_title = sanitize_title(get_the_title());?>
+
+<body <?php body_class($page_title); ?>>
 <div id="fb-root"></div>
 <script>(function(d, s, id) {
   var js, fjs = d.getElementsByTagName(s)[0];

@@ -80,6 +80,7 @@ function mitec_setup() {
 	add_image_size('homepage-module', 280, 145, true);
 	add_image_size('sponsor-logo', 175, 120);
 	add_image_size('team-member', 120, 120, true);
+	add_image_size('310x120', 310, 120, true);
 }
 endif; // mitec_setup
 add_action( 'after_setup_theme', 'mitec_setup' );
@@ -107,12 +108,17 @@ add_action( 'widgets_init', 'mitec_widgets_init' );
 function mitec_scripts() {
 	wp_enqueue_style( 'style', get_stylesheet_uri() );
 
+	// bxslider css
+	wp_enqueue_style( 'bxslider-css', get_template_directory_uri().'/inc/bxslider/jquery.bxslider.css' );
+
 	// main stylesheet
 	wp_enqueue_style( 'main', get_template_directory_uri().'/css/style.css' );
+
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
 	wp_enqueue_script( 'prefix-free', get_template_directory_uri(). '/js/prefixfree.min.js', array(), '', true);
 	wp_enqueue_script( 'jquery-tools', get_template_directory_uri(). '/js/jquery.tools.min.js', array( 'jquery' ), '1.2.7', true);
+	wp_enqueue_script( 'bxslider', get_template_directory_uri(). '/inc/bxslider/jquery.bxslider.min.js', array( 'jquery' ), '4.0', true);
 
 
 	wp_enqueue_script( 'scripts', get_template_directory_uri(). '/js/scripts.js', array( 'jquery', 'jquery-tools' ), '0.1', true);

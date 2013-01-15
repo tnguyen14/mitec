@@ -18,7 +18,7 @@ $gray: #a6a6a6;
 $light-gray: #e1e1e1;
 $lighter-gray: #f5f5f5;
 $gold: #b1931c;
-$dark-gold: #645206;
+$dark-gold: #977d18;
 $gold-text: #dcb000;
 $maroon: #390202;
 $maroon-text: #761313;
@@ -58,6 +58,13 @@ $maroon-text: #761313;
 		text-decoration: underline;
 	}
 }
+
+// List Item style
+@mixin list-item {
+	background-color: $lighter-gray;
+	border-bottom: 2px solid $light-gray;
+	padding: 1rem;
+}
 /* =Layout
 ----------------------------------------------- */
 .site-header,
@@ -89,7 +96,7 @@ $maroon-text: #761313;
 	@include box-shadow(0 0 2px rgba(0,0,0,0.2), 0 0 1px rgba(0,0,0,0.2) inset);
 	&:after {
 		content: "";
-		background: url(../inc/images/cta-arrow.png) no-repeat;
+		background: url(../inc/images/assets.png) no-repeat -36px 0;
 		display: block;
 		width: 8px;
 		height: 11px;
@@ -116,11 +123,11 @@ $maroon-text: #761313;
 			margin-left: 5em;
 			padding-top: 1rem;
 			&:before {
-				background: url(../inc/images/top-links.png);
+				background: url(../inc/images/assets.png);
 				content:  "";
 				display: inline-block;
-				width: 8px;
-				height: 8px;
+				width: 9px;
+				height: 9px;
 				margin: 0 0.4em 0.1em 0;
 			}
 			a {
@@ -131,19 +138,19 @@ $maroon-text: #761313;
 			&:nth-child(2),
 			&:first-child + li {
 				&:before {
-					background-position: 8px 0;
+					background-position: -9px 0;
 				}
 			}
 			&:nth-child(3),
 			&:first-child + li + li {
 				&:before {
-					background-position: 16px 0;
+					background-position: -18px 0;
 				}
 			}
 			&:nth-child(4),
 			&:first-child + li + li + li {
 				&:before {
-					background-position: 24px 0;
+					background-position: -27px 0;
 				}
 			}
 		}
@@ -160,7 +167,7 @@ $maroon-text: #761313;
 			height: 58px;
 		}
 		.member-login a {
-			background: #fbfbfb url(../inc/images/login-arrow.png) no-repeat 11px 11px;
+			//background: #fbfbfb url(../inc/images/login-arrow.png) no-repeat 11px 11px;
 			border: 2px solid white;
 			box-shadow: inset 0 0 3px rgba(0,0,0,0.1),
 						2px 2px 3px rgba(0,0,0,0.2);
@@ -168,11 +175,22 @@ $maroon-text: #761313;
 			float: right;
 			font-size: 1.6em;
 			line-height: 1;
-			padding: 1.5rem 4rem 1rem; 
+			padding: 1.5rem 4rem 1rem;
+			position: relative; 
 			text-transform: uppercase;
 			&:hover {
 				background-color: #eaeaea;
 				text-decoration: none;
+			}
+			&:before {
+				background: url(../inc/images/assets.png) no-repeat 0 -10px;
+				content: "";
+				display: block;
+				width: 22px;
+				height: 22px;
+				position: absolute;
+				top: 10px;
+				left: 12px;
 			}
 		}
 	}
@@ -181,7 +199,7 @@ $maroon-text: #761313;
 /* =Menu
 ----------------------------------------------- */
 .nav-wrapper {
-	height: 4.6em;
+	height: 4.6rem;
 	background: $gold;
 	.site-navigation {
 		@include group;
@@ -190,14 +208,14 @@ $maroon-text: #761313;
 		margin: 0 auto;
 		ul {
 			list-style: none;
-			margin: 0 0 0 -2em;
+			margin: 0 0 0 -2rem;
 			padding-left: 0;
 			ul {
 				box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 				display: none;
 				float: left;
 				position: absolute;
-				top: 1.5em;
+				top: 1.5rem;
 				left: 0;
 				z-index: 99999;
 				ul {
@@ -210,23 +228,26 @@ $maroon-text: #761313;
 			}
 		}
 		li {
-			border-right: 2px solid #977d18;
+			border-right: 2px solid $dark-gold;
 			float: left;
 			position: relative;
 			&:last-child {
 				border: none;
 			}
 			&:hover {
-				background-color: #977d18;
+				background-color: $dark-gold;
 				cursor: pointer;
+			}
+			&.current-menu-item {
+				background-color: $dark-gold;
 			}
 		}
 		a {
 			color: white;
-			font-size: 1.6em;
+			font-size: 1.6rem;
 			line-height: 1;
 			display: block;
-			padding: 1.5rem 2rem;
+			padding: 0.9375em 1.25em; // 15/16 = 0.9375, 20/16 = 1.25
 			text-transform: uppercase;
 			&:hover {
 				text-decoration: none;
@@ -315,6 +336,7 @@ $maroon-text: #761313;
 			font-size: 1.9em;
 		}
 		h3 {
+			color: $maroon-text;
 			font-size: 1.5rem;
 		}
 		// add spacing for the subheadline (right after main headline)
@@ -373,126 +395,21 @@ $maroon-text: #761313;
 	margin: 0 0 1.5em;
 }
 
+/* ENERGY FOLKS PAGE */
 
-/* CALENDAR PAGE */
+@import "_energyfolks";
 
+/* SLOAN PAGE */
 
-/* Energy Folks restyling*/
-
-span[id^="EnFolksScoreSpan"] a img {
-	width:0;
-	height: 0;
-	background: url("../inc/images/thumbvotes.png") no-repeat;
-	padding: 17px 20px 17px 17px;
-}
-span[id^="EnFolksScoreSpan"] a[id^="EnFolks_Vote_Down"] img,
-span[id^="EnFolksScoreSpan"] a+a img {
-	background-position: -37px 0;
-}
-
-// Table 
-.EnFolksBackground {
-	td[id^="cell"] {
-		padding-bottom: 1rem;
-	}
-}
-
-div.EnFolksListItem {
-	background-color: $lighter-gray;
-	padding: 1rem;
-	border-bottom: 2px solid $light-gray;
-	table {
-		color: $carbon;
-		font-size: 1.4rem;
-		&:hover {
-			background-color:$lighter-gray;
-		}
-		h4 {
-			font-size: 1.5rem;
-			color: $maroon-text;
-		}
-	}
-	
-	span[id^="EnFolksScoreSpan"] a img {
-		width:0;
-		height: 0;
-		background: url("../inc/images/thumbvotes.png") no-repeat;
-		padding: 17px 20px 17px 17px;
-	}
-	span[id^="EnFolksScoreSpan"] a[id^="EnFolks_Vote_Down"] img {
-		background-position: -37px 0;
-	}
-	.EnFolksSepLine {
-		display: none;
-	}
-}
-a[id^="AID"] {
-	color: $gold-text;
-	font-size: 1.1rem; // smaller font to keep Attending and Review on the same line
-	text-transform: uppercase;
-	&:hover {
-		text-decoration: underline;
-	}
-}
-span[id^="calspan"] {
-	color: $maroon-text;
-	font-size: 1.2rem;
-}
-.EnFolksPopup {
-	color: $carbon;
-	font-size: 1.4rem;
-	h4 a{
-		font-size: 1.5rem;
-		color: $maroon-text;
-	}
-}
-td.EnFolksListViewDatebar {
-	background-color: $gold;
-	color: white;
-	font-family: 'HelveticaNeueW01-75Bold', sans-serif;
-	padding: 0.5rem 1rem;
-}
-
-td.EnFolksTodayDatebar {
-	background-color: transparent;
-	color: $maroon-text;
-	font-family: 'Museo Sans W01 500', sans-serif;
-	padding-bottom: 1rem;
-}
-#EnFolksTopBarDiv {
-	//padding: 0.5rem;
-	//background-color: #e9e9e9;
-	//@include background-image(linear-gradient(#ededed, #d1d1d1));
-}
-td.EnFolksHeadings {
-	background-color: $gold;
-}
-td.EnFolksMonthDays {
-	border-color: $dark-gold;
-	padding-top: 0.5rem;
-}
-
-
-/* BULLETINS PAGE */
-
-#EnfolksResultDiv {
-	> div {
-		background-color: $lighter-gray;
-		padding: 1rem;
-		border-bottom: 2px solid $light-gray;
-	}
-}
-
+@import "_sloan";
 
 /* EXECUTIVE COMMITTEE PAGE */
 
 .team-members {
 	.team-member {
-		background-color: $lighter-gray;
-		border-bottom: 2px solid $light-gray;
 		margin-bottom: 1rem; 
-		padding: 1rem;
 		@include group;
+		@include list-item;
 		img {
 			@media (min-width: 25em) { // 400px / 16
 				max-width: 15%;
@@ -516,6 +433,20 @@ td.EnFolksMonthDays {
 				font-size: 1.9rem;
 			}
 		}
+	}
+}
+
+/* SPONSORS PAGE */
+
+.sponsor-single {
+	margin-bottom: 1rem;
+	@include list-item;
+	img {
+		float: left;
+		margin: 0 1rem 1rem 0;
+	}
+	h3 {
+		display: inline-block;
 	}
 }
 
@@ -606,6 +537,7 @@ td.EnFolksMonthDays {
 		height: 7rem;
 	}
 	.sponsor-logo {
+		cursor: pointer;
 		float: left;
 		width: 17.5rem;
 		height: 12rem;
@@ -644,7 +576,7 @@ td.EnFolksMonthDays {
 	}
 	.share-button {
 		// imageReplacement ($url, $width, $height)
-		@include image-replacement("../inc/images/share-buttons.png", 2.8em, 2.8em );
+		@include image-replacement("../inc/images/assets.png", 2.6em, 2.6em );
 		display: block;
 		float: left;
 		margin: 0.3em 1em;
@@ -652,20 +584,23 @@ td.EnFolksMonthDays {
 			margin-right: 0;
 		}
 	}
+	.facebook-button {
+		background-position: 0 -68px
+	}
 	.twitter-button {
-		background-position: -29px 0;
+		background-position: -27px -68px;
 	}
 	.linkedin-button {
-		background-position: -58px 0;
+		background-position: -55px -68px;
 	}
 	.newsletter-button {
-		background-position: -87px 0;
+		background-position: -82px -68px;
 	}
 	.contact-button {
-		background-position: -116px 0;
+		background-position: -109px -68px;
 	}
 	.addthis-button {
-		background-position: -145px 0;
+		background-position: -136px -68px;
 	}
 }
 

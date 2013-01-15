@@ -23,8 +23,13 @@ get_header(); ?>
 		<div id="content" class="site-content" role="main">
 
 			<?php while ( have_posts() ) : the_post(); ?>
-
-				<?php get_template_part( 'content', 'page' ); ?>
+				<?php 
+				if (is_page('Sloan')):
+					get_template_part('content', 'sloan');
+				else:
+					get_template_part( 'content', 'page' ); 
+				endif;
+				?>
 
 			<?php endwhile; // end of the loop. ?>
 

@@ -59,7 +59,7 @@
 
 		<?php /* Jobs Page */
 		if (is_page('Jobs')):
-			echo do_shortcode( '[energyfolks type=jobs restricttothread=21]' );
+			echo do_shortcode( '[energyfolks type=jobs restricttothread=6]' );
 		endif; // end IF Jobs page ?>
 
 		<?php /* Membership List Page */
@@ -67,8 +67,19 @@
 			echo do_shortcode( '[energyfolks type=users restricttothread=21]' );
 		endif; // end IF Membership List page ?>
 
-
-
+		<?php /* Sponsors Page */
+		if (is_page('Sponsors')):
+			$sponsors = get_field('sponsors');
+			foreach ($sponsors as $sponsor):
+				$sponsor_image = wp_get_attachment_image($sponsor['sponsor_image'], 'sponsor-logo');?>
+				<div class="sponsor-single">
+					<?php echo $sponsor_image; ?>
+					<h3><?php echo $sponsor['sponsor_name'];?></h3>
+					<p><?php echo $sponsor['sponsor_description'];?></p>
+				</div><!-- .sponsor-single -->
+			<?php endforeach;
+		endif; // end IF Sponsors Page 
+		?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mitec' ), 'after' => '</div>' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'mitec' ), '<span class="edit-link">', '</span>' ); ?>
 	</div><!-- .entry-content -->

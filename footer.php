@@ -16,8 +16,8 @@
 			<div class="sponsor-footer">
 				<h1>Sponsor Organizations</h1>
 				<?php 
-				$sponsor_page_id = 75;
-				$sponsors = get_field('sponsor', $sponsor_page_id);
+				$sponsors_page_id = get_field('sponsors_page_id', 'options');
+				$sponsors = get_field('sponsors', $sponsors_page_id);
 				foreach ($sponsors as $sponsor):
 					$sponsor_image = wp_get_attachment_image_src($sponsor['sponsor_image'], 'sponsor-logo');?>
 					<div class="sponsor-logo" style="background-image: url(<?php echo $sponsor_image[0];?>)">
@@ -29,12 +29,12 @@
 			<div class="copyright">© Copyright 2012 MIT Energy Club</div>
 			<div class="sharing">
 				<div class="stay-connected">Stay Connected</div>
-				<a class="share-button facebook-button" href="#" target="_blank">Facebook</a>
-				<a class="share-button twitter-button" href="#" target="_blank">Twitter</a>
-				<a class="share-button linkedin-button" href="#" target="_blank">LinkedIn</a>
-				<a class="share-button newsletter-button" href="#" target="_blank">Newsletter</a>
-				<a class="share-button contact-button" href="#" target="_blank">Contact</a>
-				<a class="share-button addthis-button" href="#" target="_blank">Share</a>
+				<a class="share-button facebook-button" href="#" target="_blank" title="Facebook">Facebook</a>
+				<a class="share-button twitter-button" href="#" target="_blank" title="Twiiter">Twitter</a>
+				<a class="share-button linkedin-button" href="#" target="_blank" title="LinkedIn">LinkedIn</a>
+				<a class="share-button newsletter-button" href="#" target="_blank" title="Newsletter">Newsletter</a>
+				<a class="share-button contact-button" href="#" target="_blank" title="Contact">Contact</a>
+				<a class="share-button addthis-button" href="#" target="_blank" title="Share">Share</a>
 			</div><!--sharing-->
 		</div><!--footer-inner-->
 	</footer><!-- #colophon .site-footer -->
