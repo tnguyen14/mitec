@@ -14,7 +14,7 @@ span[id^="EnFolksScoreSpan"] a+a img {
 	background-position: -38px -97px;
 }
 
-// Table 
+// Table
 .EnFolksBackground {
 	td[id^="cell"] {
 		padding-bottom: 1rem;
@@ -102,8 +102,11 @@ td.EnFolksMonthDays {
 
 /* BULLETINS PAGE */
 
-#EnfolksResultDiv {
-	> div {
-		@include list-item;
-	}
+div.EnFolksStreamItem {
+	margin-bottom: 1rem;
+	@include list-item;
+}
+
+.ef_comment .content_box {
+	background-color: transparent;
 }

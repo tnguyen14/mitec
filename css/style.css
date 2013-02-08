@@ -1220,11 +1220,16 @@ td.EnFolksMonthDays {
   padding-top: 0.5rem; }
 
 /* BULLETINS PAGE */
-/* line 106, ../scss/_energyfolks.scss */
-#EnfolksResultDiv > div {
+/* line 105, ../scss/_energyfolks.scss */
+div.EnFolksStreamItem {
+  margin-bottom: 1rem;
   background-color: whitesmoke;
   border-bottom: 2px solid #e1e1e1;
   padding: 1rem; }
+
+/* line 110, ../scss/_energyfolks.scss */
+.ef_comment .content_box {
+  background-color: transparent; }
 
 /* SLOAN PAGE */
 /* line 3, ../scss/_sloan.scss */
