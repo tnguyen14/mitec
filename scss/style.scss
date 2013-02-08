@@ -6,7 +6,7 @@
 ----------------------------------------------- */
 @import "_global";
 
-/* SCSS 
+/* SCSS
 ---------------------------------------- */
 //@import "_font-awesome";
 @import "compass/css3";
@@ -51,7 +51,7 @@ $maroon-text: #761313;
 
 // Learn more link style
 @mixin learn-more-link {
-	color:#ab8b0a; 
+	color:#ab8b0a;
 	font-size: 1.1em;
 	text-transform: uppercase;
 	&:hover {
@@ -81,7 +81,7 @@ $maroon-text: #761313;
 
 /* =Repeatable Pattern
 ----------------------------------------------- */
-.cta-button {
+@mixin cta-button {
 	background-color: #f6f3e5;
 	border: 2px solid white;
 	color: #ad8f12; // @TODO: check whether ad8f12 is close to gold-text
@@ -104,6 +104,10 @@ $maroon-text: #761313;
 		right: 1.8rem;
 		bottom: 1.4rem;
 	}
+}
+
+.cta-button {
+	@include cta-button;
 }
 
 /* =Header
@@ -175,8 +179,8 @@ $maroon-text: #761313;
 			float: right;
 			font-size: 1.6em;
 			line-height: 1;
-			padding: 1.5rem 4rem 1rem;
-			position: relative; 
+			padding: 1.5rem 2rem 1rem 4rem;
+			position: relative;
 			text-transform: uppercase;
 			&:hover {
 				background-color: #eaeaea;
@@ -371,6 +375,68 @@ $maroon-text: #761313;
 	}
 }
 
+/* FORMS */
+.gform_heading {
+	margin-bottom: 1.5rem;
+	.gform_description {
+		font-size: 1.9em;
+	}
+}
+
+.gform_footer {
+	@include group;
+	input[type="submit"] {
+		@include cta-button;
+		&:hover {
+			background-color: #ede7cc;
+		}
+	}
+}
+
+.gfield {
+	margin-top: 1rem;
+	input {
+		box-sizing: border-box;
+		padding: 5px 0;
+		width: 99%;
+	}
+}
+
+.gfield_label {
+	font-size: 1.6rem;
+	margin-bottom: 1rem;
+}
+
+.contact-name {
+	.ginput_container {
+		@include group;
+	}
+	.ginput_left,
+	.ginput_right {
+		box-sizing: border-box;
+		display: block;
+		float: left;
+		width: 47%;
+		label {
+			color: $gold-text;
+		}
+	}
+	.ginput_right {
+		float: right;
+	}
+}
+
+div[class^="gform_confirmation_message"] {
+	font-size: 1.9rem;
+}
+
+.validation_error,
+.validation_message {
+	font-size: 1.4rem;
+	color: $maroon-text;
+}
+
+
 .sticky {
 }
 .hentry {
@@ -405,34 +471,38 @@ $maroon-text: #761313;
 
 /* EXECUTIVE COMMITTEE PAGE */
 
-.team-members {
-	.team-member {
-		margin-bottom: 1rem; 
-		@include group;
-		@include list-item;
-		img {
-			@media (min-width: 25em) { // 400px / 16
-				max-width: 15%;
-				float: left;
-			}
-			@media (min-width: 60em ) { //960px / 16
-				max-width: 100%;
-			}
+
+.team-member {
+	margin-bottom: 1rem;
+	@include group;
+	@include list-item;
+	img {
+		@media (min-width: 25em) { // 400px / 16
+			max-width: 15%;
+			float: left;
 		}
-		.member-description {
+		@media (min-width: 60em ) { //960px / 16
+			max-width: 100%;
+		}
+	}
+	.member-description {
+		float: right;
+		@media (min-width: 25em) { // 400px / 16
 			float: right;
-			@media (min-width: 25em) { // 400px / 16
-				float: right;
-				width: 70%;
-				margin-left: 5%;
-			}
-			@media (min-width: 60em) {// 960px / 16
-				width: 76%;
-			}
-			h1 {
-				font-size: 1.9rem;
-			}
+			width: 70%;
+			margin-left: 5%;
 		}
+		@media (min-width: 60em) {// 960px / 16
+			width: 76%;
+		}
+		h1 {
+			font-size: 1.9rem;
+		}
+	}
+}
+.sloan-about-us {
+	.member-description {
+		width: 100%;
 	}
 }
 
@@ -469,7 +539,7 @@ $maroon-text: #761313;
 	li {
 		border-top: 1px solid $light-gray;
 		cursor: pointer;
-		
+
 		> a {
 			color: $gray-text;
 			display: block;
@@ -511,7 +581,7 @@ $maroon-text: #761313;
 /* Facebook Like Box Plugin */
 .facebook-outer {
 	border-top: 1px solid $light-gray;
-	width:27rem; 
+	width:27rem;
 	//height:23.4rem;
 	overflow: hidden;
 	@include background-image(linear-gradient(#f3f3f3, #fdfdfd));
@@ -533,7 +603,7 @@ $maroon-text: #761313;
 		font-size: 1.5rem;
 		padding-top: 5rem;
 		text-align: right;
-		width: 10.5rem;
+		width: 11rem;
 		height: 7rem;
 	}
 	.sponsor-logo {
@@ -585,22 +655,22 @@ $maroon-text: #761313;
 		}
 	}
 	.facebook-button {
-		background-position: 0 -68px
+		background-position: -1px -68px
 	}
 	.twitter-button {
-		background-position: -27px -68px;
+		background-position: -28px -68px;
 	}
 	.linkedin-button {
-		background-position: -55px -68px;
+		background-position: -56px -68px;
 	}
 	.newsletter-button {
-		background-position: -82px -68px;
+		background-position: -83px -68px;
 	}
 	.contact-button {
-		background-position: -109px -68px;
+		background-position: -110px -68px;
 	}
 	.addthis-button {
-		background-position: -136px -68px;
+		background-position: -137px -68px;
 	}
 }
 

@@ -18,7 +18,8 @@
 
 		<?php /* Presentations - Communities page */
 		if (get_field('presentations_subheadline')):?>
-			<h2>Presentations</h2>
+		<section class="presentations">
+			<h1>Presentations</h1>
 			<p><?php the_field('presentations_subheadline');?></p>
 			<?php if (get_field('presentations')):
 				$presentations = get_field('presentations');
@@ -30,10 +31,11 @@
 							<a class="cta-button" href="<?php echo esc_url($prez['link']);?>">View Presentation</a>
 						<?php endif;?>
 					</div><!-- .presentation-->
-				<?php endforeach; 
+				<?php endforeach;
 			else:?>
 				<p>There is currently no presentation.</p>
 			<?php endif; // end IF get_field('presentations;) ?>
+		</section><!-- .presentations -->
 		<?php endif; ?>
 
 
@@ -43,8 +45,8 @@
 				<?php
 				echo do_shortcode( '[energyfolks_searchbar type=calendar-agenda]' );?>
 			</div>
-			<?php 
-			echo do_shortcode( '[energyfolks type="calendar-agenda" customcss=1 setcolor="B1931C"]' ); 
+			<?php
+			echo do_shortcode( '[energyfolks type="calendar-agenda" customcss=1 setcolor="B1931C"]' );
 		endif; // end IF Calendar page ?>
 
 		<?php /* Bulletings Page */
@@ -78,7 +80,28 @@
 					<p><?php echo $sponsor['sponsor_description'];?></p>
 				</div><!-- .sponsor-single -->
 			<?php endforeach;
-		endif; // end IF Sponsors Page 
+		endif; // end IF Sponsors Page
+		?>
+
+		<?php /* Sloan About Us */
+		if (is_page('About Us')):
+			$members = get_field('members');
+		if ($members): ?>
+			<div class="sloan-about-us">
+
+			<?php
+			foreach ($members as $member): ?>
+				<div class="team-member">
+					<div class="member-description">
+						<h1><?php echo $member['name'] . ' - ' . $member['position']; ?></h1>
+						<?php echo $member['description'];?>
+					</div>
+				</div><!-- .team-member -->
+			<?php endforeach; ?>
+			</div><!-- .sloan-about-us -->
+		<?php endif; // end IF members
+
+		endif; // end IF Sloan About Us
 		?>
 		<?php wp_link_pages( array( 'before' => '<div class="page-links">' . __( 'Pages:', 'mitec' ), 'after' => '</div>' ) ); ?>
 		<?php edit_post_link( __( 'Edit', 'mitec' ), '<span class="edit-link">', '</span>' ); ?>

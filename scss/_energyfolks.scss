@@ -6,12 +6,12 @@
 span[id^="EnFolksScoreSpan"] a img {
 	width:0;
 	height: 0;
-	background: url("../inc/images/thumbvotes.png") no-repeat;
+	background: url("../inc/images/assets.png") no-repeat 1px -97px;
 	padding: 17px 20px 17px 17px;
 }
 span[id^="EnFolksScoreSpan"] a[id^="EnFolks_Vote_Down"] img,
 span[id^="EnFolksScoreSpan"] a+a img {
-	background-position: -37px 0;
+	background-position: -38px -97px;
 }
 
 // Table 
@@ -38,16 +38,17 @@ div.EnFolksListItem {
 			color: $maroon-text;
 		}
 	}
-	
+	/*
 	span[id^="EnFolksScoreSpan"] a img {
 		width:0;
 		height: 0;
-		background: url("../inc/images/thumbvotes.png") no-repeat;
+		background: url("../inc/images/assets.png") no-repeat;
 		padding: 17px 20px 17px 17px;
 	}
 	span[id^="EnFolksScoreSpan"] a[id^="EnFolks_Vote_Down"] img {
 		background-position: -37px 0;
 	}
+	*/
 	.EnFolksSepLine {
 		display: none;
 	}
