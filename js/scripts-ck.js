@@ -1,1 +1,1 @@
-jQuery(document).ready(function(e){e(".homepage-feature .supporting-content").scrollable({circular:!0}).autoscroll(1e4).navigator(".bottom-tabs");e(".sloan-carousel").bxSlider({auto:!0,pause:8e3,pager:!1});e('.EnFolksListItem span[id^="EnFolksScoreSpan"] a img').attr("src","huh?")});
+jQuery(document).ready(function(e){e(".homepage-feature .homepage-carousel").scrollable({circular:!0}).autoscroll(1e4).navigator(".bottom-tabs");e(".sloan-carousel").bxSlider({auto:!0,pause:8e3,pager:!1});e('.EnFolksListItem span[id^="EnFolksScoreSpan"] a img').attr("src","huh?")});

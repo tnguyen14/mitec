@@ -1,6 +1,11 @@
 jQuery(document).ready(function($) {
-	
-	$(".homepage-feature .supporting-content").scrollable({ circular: true }).autoscroll(10000).navigator(".bottom-tabs");
+
+	$(".homepage-feature .homepage-carousel").scrollable({ circular: true }).autoscroll(10000).navigator(".bottom-tabs");
+	/*$(".homepage-feature").bxSlider({
+		auto: true,
+		pause: 10000,
+		pagerSelector: '.bottom-tabs'
+	});*/
 	$(".sloan-carousel").bxSlider({
 		auto: true,
 		pause: 8000,

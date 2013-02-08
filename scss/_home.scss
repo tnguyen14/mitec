@@ -26,49 +26,75 @@
 			text-align: center;
 			text-transform: uppercase;
 		}
+	}
+	.homepage-carousel {
+		width: 98rem;
+		height: 16rem;
+		margin: 0 auto;
+		padding-top: 51.4rem;
+		position: relative;
+		overflow: hidden;
+		@include group;
+	}
+	.features {
+		width: 20000em;
+		position: absolute;
+	}
+	.feature-single {
+		float: left;
+		width: 98em;
+		position: relative;
 		&:before,
 		&:after {
 			background: rgba(0,0,0,0.5);
+			bottom: 0;
 			content: "";
 			display: block;
-			width: 5em;
-			height: 20em;
+			width: 3.8em;
+			height: 13em;
 			position: absolute;
-			bottom: -15.5em;
-			left: -5.5em;
+		}
+		&:before {
+			left: 0em;
 		}
 		&:after {
-			left: 87.5em;
+			left: 94.2em;
+			z-index: 2;
 		}
-	}
-	.supporting-content {
-		background: rgba(0,0,0,0.5);
-		margin: 0.5em auto 0;
-		position: relative;
-		overflow: hidden;
-		width: 88em;
-		height: 15em;
-		.features {
-			width: 20000em;
-			position: absolute;
-		}
-		.feature {
+		.headline {
+			background: rgba(57, 2, 2, 0.75);
 			box-sizing: border-box;
-			float: left;
-			width: 88em;
+			color: white;
+			font-size: 3rem;
+			margin: 0 auto 0.4rem;
+			padding: 1.5rem 2rem;
+			text-align: center;
+			text-transform: uppercase;
+			width: 91.4285714%;
+			height: 6.6rem;
+			overflow: hidden;
+		}
+		.supporting-content {
+			background: rgba(0,0,0,0.5);
+			position: relative;
+			overflow: hidden;
+			margin: 0 auto;
+			width: 92.244898%;
+			height: 9rem;
+		}
+		p {
+			color: white;
+			font-size: 1.8em;
 			padding: 2rem 3rem;
-			p {
-				color: white;
-				font-size: 1.8em;
-				padding: 2rem 3rem;
-				text-align: center;
-			}
-			a {
-				color: $gold-text;
-				font-size: 1.1rem;
-				text-transform: uppercase;
-			}
-
+			text-align: center;
+			margin: 0;
+		}
+		a {
+			color: $gold-text;
+		}
+		.learn-more {
+			font-size: 1.1rem;
+			text-transform: uppercase;
 		}
 	}
 }

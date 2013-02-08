@@ -5,39 +5,48 @@ get_header(); ?>
 		<div id="primary" class="content-area-home">
 			<div id="content" class="site-content" role="main">
 				<div class="homepage-feature">
-					<div class="main-headline">
-						<p>
-							<?php the_field("main_headline");?>
-						</p>
-					</div><!--main-headline-->
-					<div class="supporting-content">
+					<div class="homepage-carousel">
 						<div class="features">
-							<?php $features = get_field('features');
-							if ($features) {
-								$count = 1;
-								foreach($features as $feature) {
-									if ($count == 1) {
-										echo '<div class="feature feature-1 active" id="feature-1"><p>';
+							<?php /*
+							<div class="main-headline">
+								<p>
+									<?php the_field("main_headline");?>
+								</p>
+							</div><!--main-headline-->
+							*/?>
+
+								<?php $features = get_field('features');
+								if ($features) {
+									$count = 1;
+									foreach($features as $feature) {
+										if ($count == 1) {
+											echo '<div class="feature-single feature-1 active" id="feature-1">';
+										}
+										else {
+											echo '<div class="feature-single feature-'.$count.'" id="feature-"'.$count.'>';
+										}
+										echo '<div class="headline">' . $feature['headline'] . '</div><!-- .headline -->';
+										echo '<div class="supporting-content"><p>' . $feature['supporting_text'];
+										if ($feature['supporting_link']) {
+											echo '<a class="learn-more" href=' . $feature['supporting_link'] . '>Learn More</a>';
+										}
+										echo '</p></div><!-- .supporting-content -->';
+										echo '</div><!-- .feature-single -->';
+										$count++;
 									}
-									else {
-										echo '<div class="feature feature-'.$count.'" id="feature-"'.$count.'><p>';
-									}
-									echo $feature['supporting_text'].' <a href='.$feature['supporting_link'].'>Learn More</a>'.'</p></div>';
-									$count++;
-								}
-							} ?>
+								} ?>
 						</div><!--features-->
-					</div><!--supporting-content-->
+					</div><!-- .homepage-carousel -->
 				</div><!--homepage-feature-->
 				<div class="tabs-wrap">
 					<div class="bottom-tabs">
 						<?php $count = count($features);
 							for ($i = 1; $i <= $count; $i++) {
 								if ($i == 1) {
-									echo '<a class="tab tab-'.$count.' active" href="#feature-1"></a>';
+									echo '<a class="tab tab-' . $count . ' active" href="#feature-1" data-slide-index="' . $i . '"></a>';
 								}
 								else {
-									echo '<a class="tab tab-'.$count.'" href="#feature-'.$i.'""></a>';
+									echo '<a class="tab tab-'.$count.'" href="#feature-' . $i . '" data-slide-index=" ' . $i . ' "></a>';
 								}
 							} ?>
 					</div>
@@ -57,7 +66,7 @@ get_header(); ?>
 									<p><?php echo $module['module_text'];?></p>
 									<a class="learn-more" href="<?php echo $module['module_link'];?>">Learn More</a>
 								</div><!--homepage-module-->
-							<?php 
+							<?php
 							endforeach;
 						endif;?>
 						<div class="homepage-event-feed">
