@@ -5,6 +5,8 @@ get_header(); ?>
 		<div id="primary" class="content-area-home">
 			<div id="content" class="site-content" role="main">
 				<div class="homepage-feature">
+					<div class="headline-holder"></div>
+					<div class="content-holder"></div>
 					<div class="homepage-carousel">
 						<div class="features">
 							<?php /*

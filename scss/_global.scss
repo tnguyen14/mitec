@@ -10,6 +10,7 @@ body {
 /* Headings */
 h1,h2,h3,h4,h5,h6 {
 	clear: both;
+	font-weight: normal;
 }
 hr {
 	background-color: #ccc;
@@ -213,6 +214,7 @@ textarea {
 
 a {
 	text-decoration: none;
+	color: $gold-text;
 	/*
 	color: royalblue;
 	&:visited {
@@ -226,6 +228,14 @@ a {
 	&:active {
 		color: midnightblue;
 	}*/
+}
+
+/* BxSlider */
+.bx-wrapper .bx-viewport {
+	box-shadow: none;
+	border: none;
+	left: auto;
+	background: none;
 }
 
 /* Alignment */

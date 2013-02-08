@@ -31,19 +31,26 @@
 		width: 98rem;
 		height: 16rem;
 		margin: 0 auto;
-		padding-top: 51.4rem;
+		padding-top: 35.8rem;
 		position: relative;
 		overflow: hidden;
 		@include group;
 	}
-	.features {
-		width: 20000em;
-		position: absolute;
-	}
-	.feature-single {
-		float: left;
-		width: 98em;
+	.headline-holder {
+		background: rgba(57, 2, 2, 0.75);
+		margin: 0 auto;
 		position: relative;
+		top: 51.4rem;
+		width: 89.599rem; // 91.4285714% * 98rem
+		height: 6.6rem;
+	}
+	.content-holder {
+		background: rgba(0,0,0,0.5);
+		margin: 0 auto;
+		position: relative;
+		top: 51.8rem;
+		width: 90.4rem; // 92.244898% * 98rem
+		height: 9rem;
 		&:before,
 		&:after {
 			background: rgba(0,0,0,0.5);
@@ -55,14 +62,21 @@
 			position: absolute;
 		}
 		&:before {
-			left: 0em;
+			left: -3.8em;
 		}
 		&:after {
-			left: 94.2em;
-			z-index: 2;
+			left: 90.4em;
 		}
+	}
+	.features {
+		width: 20000em;
+		position: absolute;
+	}
+	.feature-single {
+		float: left;
+		width: 98em;
+		position: relative;
 		.headline {
-			background: rgba(57, 2, 2, 0.75);
 			box-sizing: border-box;
 			color: white;
 			font-size: 3rem;
@@ -75,7 +89,6 @@
 			overflow: hidden;
 		}
 		.supporting-content {
-			background: rgba(0,0,0,0.5);
 			position: relative;
 			overflow: hidden;
 			margin: 0 auto;
@@ -88,9 +101,6 @@
 			padding: 2rem 3rem;
 			text-align: center;
 			margin: 0;
-		}
-		a {
-			color: $gold-text;
 		}
 		.learn-more {
 			font-size: 1.1rem;
@@ -170,6 +180,7 @@
 		h2 {
 			font-size: 1.8rem;
 			margin-top: 1.5rem;
+			line-height: 1.22222; // 22 / 18
 		}
 		p {
 			color: $gray-text;
