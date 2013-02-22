@@ -1,14 +1,6 @@
-/* Variables */
-$carbon: #505050;
-$gray-text: #7b7b7b;
-$gray: #a6a6a6;
-$light-gray: #e1e1e1;
-$lighter-gray: #f5f5f5;
-$gold: #b1931c;
-$dark-gold: #977d18;
-$gold-text: #dcb000;
-$maroon: #390202;
-$maroon-text: #761313;
+/* =Bits
+----------------------------------------------- */
+@import "_bits";
 
 /* =Resetting
 ----------------------------------------------- */
@@ -18,53 +10,10 @@ $maroon-text: #761313;
 ----------------------------------------------- */
 @import "_global";
 
-/* SCSS
----------------------------------------- */
 //@import "_font-awesome";
 @import "compass/css3";
 
-/* Mixins */
-@mixin group {
-	&:after {
-		content: "";
-		display: table;
-		clear: both;
-	}
-}
 
-// Scott Kellum Image Replacement Method
-// URL: http://css-tricks.com/examples/ImageReplacement/
-@mixin image-replacement ( $url, $width, $height ) {
-	width: $width;
-	height: $height;
-	background: url($url) no-repeat;
-	text-indent: 100%;
-	white-space: nowrap;
-	overflow: hidden;
-}
-
-// Use opacity with hex color without converting to rgba
-@mixin background-color ($color, $opacity: 0) {
-	background-color: $color;
-	@include opacity($opacity);
-}
-
-// Learn more link style
-@mixin learn-more-link {
-	color:#ab8b0a;
-	font-size: 1.1em;
-	text-transform: uppercase;
-	&:hover {
-		text-decoration: underline;
-	}
-}
-
-// List Item style
-@mixin list-item {
-	background-color: $lighter-gray;
-	border-bottom: 2px solid $light-gray;
-	padding: 1rem;
-}
 /* =Layout
 ----------------------------------------------- */
 .site-header,
@@ -242,8 +191,8 @@ $maroon-text: #761313;
 			border-right: 2px solid $dark-gold;
 			float: left;
 			position: relative;
-			&:last-child {
-				border: none;
+			&:first-child {
+				border-left: 2px solid $dark-gold;
 			}
 			&:hover {
 				background-color: $dark-gold;
@@ -546,12 +495,11 @@ div[class^="gform_confirmation_message"] {
 	li {
 		border-top: 1px solid $light-gray;
 		cursor: pointer;
-
 		> a {
-			color: $gray-text;
+			color: $darker-gray-text;
 			display: block;
 			font-size: 1.4rem;
-			padding: 1rem 0 1rem 7.4074074%; // 20px / 270px
+			padding: 1.2rem 0 0.8rem 7.4074074%; // 20px / 270px
 		}
 		&.current_page_item,
 		&.current-cat,
@@ -629,6 +577,7 @@ div[class^="gform_confirmation_message"] {
 	.bx-wrapper {
 		width: 87rem;
 		float: right;
+		margin: 0;
 	}
 }
 
