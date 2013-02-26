@@ -25,7 +25,9 @@
 .site-navigation,
 .footer-inner,
 .content-wrap {
-	width: 98em;
+	@media (min-width: $big-screen) {
+		width: 100rem;
+	}
 }
 
 /* =Repeatable Pattern
@@ -63,22 +65,37 @@
 ----------------------------------------------- */
 .site-header {
 	.top-links {
-		height: 3.2em;
+		@media (min-width: 44.75em) {
+			height: 3.2em;
+		}
 		margin: 0 auto;
 		@media (min-width: 103em) {
 			width: 103em;
 		}
 		box-shadow: 0 5px 6px -4px rgba(0,0,0,0.2);
 		ul {
-			width: 77.5rem;
+			@media (min-width: 50em) {
+				width: 77.5rem;
+			}
 			margin: 0 auto;
 			@include group;
 		}
 		li {
-			float: left;
+			text-align: center;
+			@media (min-width: 44.75em) {
+				float: left;
+				margin-left: 3em;
+				text-align: left;
+			}
+			@media (min-width: 46.875em) {
+				margin-left: 4em;
+			}
+			@media (min-width: 50em) {
+				margin-left: 5em;
+			}
 			list-style: none;
-			margin-left: 5em;
 			padding-top: 1rem;
+			padding-bottom: 0.5rem;
 			&:before {
 				background: url(../inc/images/assets.png);
 				content:  "";
@@ -126,31 +143,34 @@
 			width: 387px;
 			height: 58px;
 		}
-		.member-login a {
-			//background: #fbfbfb url(../inc/images/login-arrow.png) no-repeat 11px 11px;
-			border: 2px solid white;
-			box-shadow: inset 0 0 3px rgba(0,0,0,0.1),
-						2px 2px 3px rgba(0,0,0,0.2);
-			color: $gold;
-			float: right;
-			font-size: 1.6em;
-			line-height: 1;
-			padding: 1.5rem 2rem 1rem 4rem;
-			position: relative;
-			text-transform: uppercase;
-			&:hover {
-				background-color: #eaeaea;
-				text-decoration: none;
-			}
-			&:before {
-				background: url(../inc/images/assets.png) no-repeat 0 -10px;
-				content: "";
-				display: block;
-				width: 22px;
-				height: 22px;
-				position: absolute;
-				top: 10px;
-				left: 12px;
+		.member-login {
+			@include group;
+			a {
+				//background: #fbfbfb url(../inc/images/login-arrow.png) no-repeat 11px 11px;
+				border: 2px solid white;
+				box-shadow: inset 0 0 3px rgba(0,0,0,0.1),
+							2px 2px 3px rgba(0,0,0,0.2);
+				color: $gold;
+				float: right;
+				font-size: 1.6em;
+				line-height: 1;
+				padding: 1.5rem 2rem 1rem 4rem;
+				position: relative;
+				text-transform: uppercase;
+				&:hover {
+					background-color: #eaeaea;
+					text-decoration: none;
+				}
+				&:before {
+					background: url(../inc/images/assets.png) no-repeat 0 -10px;
+					content: "";
+					display: block;
+					width: 22px;
+					height: 22px;
+					position: absolute;
+					top: 10px;
+					left: 12px;
+				}
 			}
 		}
 	}
@@ -159,17 +179,22 @@
 /* =Menu
 ----------------------------------------------- */
 .nav-wrapper {
-	height: 4.6rem;
+	@media (min-width: $big-screen) {
+		height: 4.6rem;
+	}
 	background: $gold;
 	.site-navigation {
 		@include group;
 		clear: both;
 		display: block;
 		margin: 0 auto;
+		.menu-main-menu-container {
+			@include group;
+		}
 		ul {
 			list-style: none;
-			margin: 0 0 0 -2rem;
-			padding-left: 0;
+			padding: 0 7%;
+			@include group;
 			ul {
 				box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 				display: none;
@@ -186,13 +211,27 @@
 					width: 200px;
 				}
 			}
+			@media (min-width: $big-screen) {
+				padding: 0;
+			}
 		}
 		li {
-			border-right: 2px solid $dark-gold;
-			float: left;
+			border-bottom: 2px solid $dark-gold;
+			box-sizing: border-box;
+			@media (min-width: 35em) {
+				border-left: 1.4px solid $dark-gold;
+				border-right: 1.4px solid $dark-gold;
+				float: left;
+				width: 16rem;
+			}
 			position: relative;
 			&:first-child {
-				border-left: 2px solid $dark-gold;
+				@media (min-width: 35em) {
+					border-left: 2.7px solid $dark-gold;
+				}
+			}
+			&:last-child {
+				border-right: 2.7px solid $dark-gold;
 			}
 			&:hover {
 				background-color: $dark-gold;
@@ -201,6 +240,10 @@
 			&.current-menu-item {
 				background-color: $dark-gold;
 			}
+			@media (min-width: $big-screen) {
+				border-bottom: none;
+				width: auto;
+			}
 		}
 		a {
 			color: white;
@@ -208,9 +251,13 @@
 			line-height: 1;
 			display: block;
 			padding: 0.9375em 1.25em; // 15/16 = 0.9375, 20/16 = 1.25
+			text-align: center;
 			text-transform: uppercase;
 			&:hover {
 				text-decoration: none;
+			}
+			@media (min-width: $big-screen) {
+				text-align: left;
 			}
 		}
 	}
@@ -550,7 +597,9 @@ div[class^="gform_confirmation_message"] {
 }
 .sponsor-footer {
 	margin: 0 auto;
-	width: 98rem;
+	@media (min-width: $big-screen) {
+		width: 100rem;
+	}
 	@include group;
 	h1 {
 		color: $maroon-text;

@@ -3,7 +3,7 @@
  */
 jQuery( document ).ready( function( $ ) {
 	var $masthead = $( '#masthead' ),
-	    timeout = false;
+		timeout = false;
 
 	$.fn.smallMenu = function() {
 		$masthead.find( '.site-navigation' ).removeClass( 'main-navigation' ).addClass( 'main-small-navigation' );
@@ -14,7 +14,7 @@ jQuery( document ).ready( function( $ ) {
 			$( this ).toggleClass( 'toggled-on' );
 		} );
 	};
-
+	/*
 	// Check viewport width on first load.
 	if ( $( window ).width() < 600 )
 		$.fn.smallMenu();
@@ -36,4 +36,5 @@ jQuery( document ).ready( function( $ ) {
 			}
 		}, 200 );
 	} );
+	*/
 } );

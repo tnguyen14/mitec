@@ -58,8 +58,9 @@ get_header(); ?>
 					<div class="homepage-lower-content">
 						<?php $modules = get_field('modules');
 						// if there are 2 modules to display
-						if (count($modules)== 2):
-							foreach($modules as $module):?>
+						if (count($modules)== 2): ?>
+							<div class="module-wrap">
+							<?php foreach($modules as $module):?>
 								<div class="homepage-module">
 									<h1><?php echo $module['module_title'];?></h1>
 									<?php $module_image = wp_get_attachment_image_src($module['module_image'], 'homepage-module');?>
@@ -69,28 +70,24 @@ get_header(); ?>
 									<a class="learn-more" href="<?php echo $module['module_link'];?>">Learn More</a>
 								</div><!--homepage-module-->
 							<?php
-							endforeach;
-						endif;?>
+							endforeach; ?>
+							</div><!-- .module-wrap -->
+						<?php endif;?>
 						<div class="homepage-event-feed">
 							<h1>Events Calendar</h1>
-							<div class="event">
-								<div class="event-date">
-									<span class="month">July</span>
-									<span class="date">21</span>
-								</div><!--event-date-->
-								<h2>Event Name Area Goes Here Blah Blah Blah</h2>
-								<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-								<a class="learn-more" href="#">Learn More</a>
-							</div><!--event-->
-							<div class="event">
-								<div class="event-date">
-									<span class="month">August</span>
-									<span class="date">23</span>
-								</div><!--event-date-->
-								<h2>Event Name Area Goes Here Blah Blah Blah</h2>
-								<p>Aenean eu leo quam. Pellentesque ornare sem lacinia quam venenatis vestibulum. Nullam quis risus eget urna mollis ornare vel eu leo.</p>
-								<a class="learn-more" href="#">Learn More</a>
-							</div><!--event-->
+							<?php $events = get_field( 'featured_events' );
+							foreach ($events as $event):
+								$date = DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+							?>
+								<div class="event">
+									<div class="event-date">
+										<span class="month"><?php echo $date->format( 'F' );?></span>
+										<span class="date"><?php echo $date->format( 'd' );?></span>
+									</div><!-- .event-date -->
+									<h2><?php echo $event['event_name'];?></h2>
+									<p><?php echo $event['event_description'];?> <a class="learn-more" href="<?php echo $event['event_link'];?>">Learn More</a></p>
+								</div><!-- .event -->
+							<?php endforeach; ?>
 						</div><!--homepage-event-feed-->
 					</div><!--homepage-lower-content-->
 				</div><!--homepage-lower-wrap-->

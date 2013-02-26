@@ -12,6 +12,9 @@ $gold-text: #dcb000;
 $maroon: #390202;
 $maroon-text: #761313;
 
+$big-screen: 62.5em; // 1000px
+$medium-screen: 40em; // 640px
+
 /* Mixins */
 @mixin group {
 	&:after {
