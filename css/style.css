@@ -1501,7 +1501,7 @@ div.EnFolksStreamItem {
       /* line 500, ../scss/style.scss */
       .team-member .member-description {
         width: 70%; } }
-    @media (min-width: 37.5em) {
+    @media (min-width: 58em) {
       /* line 500, ../scss/style.scss */
       .team-member .member-description {
         width: 76%; } }
