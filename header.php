@@ -63,10 +63,10 @@ $page_title = sanitize_title(get_the_title());?>
 	<header id="masthead" class="site-header" role="banner">
 		<div class="top-links">
 			<ul>
-				<li><a href="#">Energy Conference</a></li>
-				<li><a href="#">Clean Energy Prize</a></li>
-				<li><a href="#">Energy Night</a></li>
-				<li><a href="#">Energy Finance Forum</a></li>
+				<li><a href="http://mitenergyconference.com/">Energy Conference</a></li>
+				<li><a href="http://cep.mit.edu/">Clean Energy Prize</a></li>
+				<li><a href="http://mitenergynight.org/">Energy Night</a></li>
+				<li><a href="http://www.mitenergyfinanceforum.org/">Energy Finance Forum</a></li>
 			</ul>
 		</div><!-- .top-links -->
 

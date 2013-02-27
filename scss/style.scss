@@ -281,6 +281,7 @@
 /* Main Standard Content */
 .site-main {
 	border-bottom: 2px solid $light-gray;
+	overflow: hidden;
 	padding-bottom: 6rem;
 	@include group;
 }
@@ -304,12 +305,16 @@
 .widget-area {
 	background-color: #fdfdfd;
 	border: 3px solid #f1eee4;
-	width: 100%;
+	box-sizing: border-box;
+	margin: 0 auto;
+	position: relative;
+	width: 28.1rem;
+	z-index: 2;
 	//box-shadow: 0 1px 4px 1px rgba(0,0,0,0.3);
 	@include box-shadow(rgba(0,0,0,0.3) 0 1px 4px 1px);
 	@media (min-width: 50em) { // min width 800px / 16
 		float: left;
-		width: 27.5510204%; // 270px / 980px
+		//width: 34.375%; // 275px / 800px
 	}
 }
 .content-area {
@@ -317,7 +322,10 @@
 	@media (min-width: 50em) { // min width 800px / 16
 		box-sizing: border-box;
 		float: right;
-		width: 71.4285714%; // 700px / 980px
+		width: 64.875%; // 519px / 800px
+	}
+	@media (min-width: $big-screen) {
+		width: 71.9rem;
 	}
 }
 
@@ -326,6 +334,7 @@
 		@include background-color($maroon, 0.75);
 		margin-left: -3px; // To make up for the box-shadow on the sidebar
 		padding: 1.5em 0 1em 5.7142857%; //38px / 665px;
+		width: 200rem;
 		.entry-title {
 			color: white;
 			font-size: 2.8em;
@@ -583,7 +592,7 @@ div[class^="gform_confirmation_message"] {
 /* Facebook Like Box Plugin */
 .facebook-outer {
 	border-top: 1px solid $light-gray;
-	width:27rem;
+	width:27.5rem;
 	//height:23.4rem;
 	overflow: hidden;
 	@include background-image(linear-gradient(#f3f3f3, #fdfdfd));

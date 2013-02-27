@@ -17,10 +17,10 @@
 				<h1>Sponsor Organizations</h1>
 				<div class="sponsors">
 					<?php
-					$sponsors_page_id = get_field('sponsors_page_id', 'options');
-					$sponsors = get_field('sponsors', $sponsors_page_id);
-					foreach ($sponsors as $sponsor):
-						$sponsor_image = wp_get_attachment_image_src($sponsor['sponsor_image'], 'sponsor-logo');?>
+					$sponsors_page_id = get_field( 'sponsors_page_id', 'options' );
+					$sponsors = get_field( 'sponsors', $sponsors_page_id );
+					foreach ( $sponsors as $sponsor ):
+						$sponsor_image = wp_get_attachment_image_src( $sponsor['sponsor_image'], 'sponsor-logo' );?>
 						<div class="sponsor-logo" style="background-image: url(<?php echo $sponsor_image[0];?>)">
 						</div><!--sponsor-logo-->
 					<?php endforeach;?>
