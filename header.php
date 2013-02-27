@@ -62,7 +62,8 @@ $page_title = sanitize_title(get_the_title());?>
 
 	<header id="masthead" class="site-header" role="banner">
 		<div class="top-links">
-			<ul>
+			<h1 class="links-toggle">Energy Links</h1>
+			<ul class="links">
 				<li><a href="http://mitenergyconference.com/">Energy Conference</a></li>
 				<li><a href="http://cep.mit.edu/">Clean Energy Prize</a></li>
 				<li><a href="http://mitenergynight.org/">Energy Night</a></li>

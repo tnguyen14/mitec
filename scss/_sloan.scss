@@ -17,12 +17,18 @@
 				padding-right: 4rem;
 			}
 			h1 {
-				font-size: 2.2rem;
+				font-size: 1.8rem;
+				@media (min-width: 25em) {
+					font-size: 2.2rem;
+				}
 				text-transform: uppercase;
 				margin-bottom: 1rem;
 			}
 			p {
-				font-size: 1.6rem;
+				font-size: 1.4rem;
+				@media (min-width: 25em) {
+					font-size: 1.6rem;
+				}
 				margin-bottom: 0;
 				height: 3.8rem;
 				overflow: hidden;
@@ -39,7 +45,7 @@
 	}
 
 	.bx-wrapper {
-		margin: 0 0 0 -3px;
+		margin: 0;
 		.bx-prev {
 			left: 0.5rem;
 			background: url(../inc/images/assets.png) no-repeat 0 -34px;
@@ -53,10 +59,17 @@
 	// Volunteers and Applicants
 	.sloan-feature {
 		@include list-item;
+		margin-bottom: 1rem;
 		width: 100%;
-		@media (min-width: 31.25em) { // 500px / 16px
+		@media (min-width: 40em) { // 640px / 16px
 			width:46.686747%; // 310px / 664px;
 			max-width: 32.5rem;
+		}
+		@media (min-width: 48.75em) {
+			width: 100%;
+		}
+		@media (min-width: $big-screen) {
+			width: 46.686747%;
 		}
 		img {
 			margin-bottom: 2rem;
@@ -69,7 +82,7 @@
 		}
 		p {
 			font-size: 1.4rem;
-			height: 8.4rem;
+			max-height: 8.4rem;
 			overflow: hidden;
 		}
 	}
@@ -77,6 +90,15 @@
 		float: left;
 	}
 	.applicants {
-		float: right;
+		float: left;
+		@media (min-width: 40em) {
+			float: right;
+		}
+		@media (min-width: 48.75em) {
+			float: left;
+		}
+		@media (min-width: $big-screen) {
+			float: right;
+		}
 	}
 }
