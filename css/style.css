@@ -1478,101 +1478,106 @@ div.EnFolksStreamItem {
     content: "";
     display: table;
     clear: both; }
-  @media (min-width: 25em) {
-    /* line 491, ../scss/style.scss */
-    .team-member img {
-      max-width: 15%;
-      float: left; } }
-  @media (min-width: 60em) {
-    /* line 491, ../scss/style.scss */
-    .team-member img {
-      max-width: 100%; } }
+  /* line 491, ../scss/style.scss */
+  .team-member img {
+    margin: 0 1rem 1rem 0; }
+    @media (min-width: 25em) {
+      /* line 491, ../scss/style.scss */
+      .team-member img {
+        float: left; } }
+    @media (min-width: 60em) {
+      /* line 491, ../scss/style.scss */
+      .team-member img {
+        max-width: 100%; } }
   /* line 500, ../scss/style.scss */
   .team-member .member-description {
-    float: right; }
+    float: right;
+    width: 100%; }
     @media (min-width: 25em) {
       /* line 500, ../scss/style.scss */
       .team-member .member-description {
-        float: right;
-        width: 70%;
-        margin-left: 5%; } }
-    @media (min-width: 60em) {
+        float: right; } }
+    @media (min-width: 30em) {
+      /* line 500, ../scss/style.scss */
+      .team-member .member-description {
+        width: 70%; } }
+    @media (min-width: 37.5em) {
       /* line 500, ../scss/style.scss */
       .team-member .member-description {
         width: 76%; } }
-    /* line 510, ../scss/style.scss */
+    /* line 512, ../scss/style.scss */
     .team-member .member-description h1 {
       font-size: 1.9rem; }
 
-/* line 516, ../scss/style.scss */
+/* line 518, ../scss/style.scss */
 .sloan-about-us .member-description {
   width: 100%; }
 
 /* SPONSORS PAGE */
-/* line 523, ../scss/style.scss */
+/* line 525, ../scss/style.scss */
 .sponsor-single {
   margin-bottom: 1rem;
   background-color: whitesmoke;
   border-bottom: 2px solid #e1e1e1;
   padding: 1rem; }
-  /* line 526, ../scss/style.scss */
+  /* line 528, ../scss/style.scss */
   .sponsor-single img {
     float: left;
     margin: 0 1rem 1rem 0; }
-  /* line 530, ../scss/style.scss */
+  /* line 532, ../scss/style.scss */
   .sponsor-single h3 {
     display: inline-block; }
 
 /* =Asides
 ----------------------------------------------- */
-/* line 539, ../scss/style.scss */
+/* line 541, ../scss/style.scss */
 .blog .format-aside .entry-title,
 .archive .format-aside .entry-title {
   display: none; }
 
-/* line 543, ../scss/style.scss */
+/* line 545, ../scss/style.scss */
 .sidebar-nav {
   margin-bottom: 3.5em;
   text-transform: uppercase; }
-  /* line 546, ../scss/style.scss */
+  /* line 548, ../scss/style.scss */
   .sidebar-nav h1 {
     color: #dcb000;
     font-size: 1.2em;
     padding: 1.5em 0 1em 7.40741%; }
-  /* line 551, ../scss/style.scss */
+  /* line 553, ../scss/style.scss */
   .sidebar-nav li {
     border-top: 1px solid #e1e1e1;
     cursor: pointer; }
-    /* line 554, ../scss/style.scss */
+    /* line 556, ../scss/style.scss */
     .sidebar-nav li > a {
       color: #5f5f5f;
       display: block;
       font-size: 1.4rem;
       padding: 1.2rem 0 0.8rem 7.40741%; }
-    /* line 562, ../scss/style.scss */
+    /* line 564, ../scss/style.scss */
     .sidebar-nav li.current_page_item, .sidebar-nav li.current-cat, .sidebar-nav li:hover {
       background-color: #e1e1e1; }
 
 /* Tiemly Content */
-/* line 569, ../scss/style.scss */
+/* line 571, ../scss/style.scss */
 .timely-content {
   border-top: 1px solid #e1e1e1;
   line-height: 1.4;
   padding: 1em 0 1em 7.40741%; }
-  /* line 574, ../scss/style.scss */
+  /* line 576, ../scss/style.scss */
   .timely-content h1 {
     font-size: 1.5em;
     margin-bottom: 1rem; }
-  /* line 578, ../scss/style.scss */
+  /* line 580, ../scss/style.scss */
   .timely-content img {
     max-width: 85.1851852%;
     height: auto;
     margin-bottom: 1em; }
-  /* line 583, ../scss/style.scss */
+  /* line 585, ../scss/style.scss */
   .timely-content p {
     color: #7b7b7b;
     margin-bottom: 0.5em; }
-  /* line 587, ../scss/style.scss */
+  /* line 589, ../scss/style.scss */
   .timely-content a {
     color: #ab8b0a;
     font-size: 1.1em;
@@ -1582,7 +1587,7 @@ div.EnFolksStreamItem {
       text-decoration: underline; }
 
 /* Facebook Like Box Plugin */
-/* line 593, ../scss/style.scss */
+/* line 595, ../scss/style.scss */
 .facebook-outer {
   border-top: 1px solid #e1e1e1;
   width: 27.5rem;
@@ -1595,16 +1600,16 @@ div.EnFolksStreamItem {
 
 /* =Footer
 ----------------------------------------------- */
-/* line 603, ../scss/style.scss */
+/* line 605, ../scss/style.scss */
 .sponsor-footer-wrap {
   border-bottom: 2px solid #e1e1e1;
   width: 100%; }
 
-/* line 607, ../scss/style.scss */
+/* line 609, ../scss/style.scss */
 .sponsor-footer {
   margin: 0 auto; }
   @media (min-width: 62.5em) {
-    /* line 607, ../scss/style.scss */
+    /* line 609, ../scss/style.scss */
     .sponsor-footer {
       width: 100rem; } }
   /* line 20, ../scss/_bits.scss */
@@ -1612,7 +1617,7 @@ div.EnFolksStreamItem {
     content: "";
     display: table;
     clear: both; }
-  /* line 613, ../scss/style.scss */
+  /* line 615, ../scss/style.scss */
   .sponsor-footer h1 {
     color: #761313;
     float: left;
@@ -1621,7 +1626,7 @@ div.EnFolksStreamItem {
     text-align: right;
     width: 10.5rem;
     height: 7rem; }
-  /* line 622, ../scss/style.scss */
+  /* line 624, ../scss/style.scss */
   .sponsor-footer .sponsor-logo {
     cursor: pointer;
     float: left;
@@ -1629,23 +1634,23 @@ div.EnFolksStreamItem {
     height: 12rem;
     background-repeat: no-repeat; }
     @media (min-width: 37.5em) {
-      /* line 622, ../scss/style.scss */
+      /* line 624, ../scss/style.scss */
       .sponsor-footer .sponsor-logo {
         -webkit-filter: grayscale(100%);
         -moz-filter: grayscale(100%);
         filter: grayscale(100%); }
-        /* line 630, ../scss/style.scss */
+        /* line 632, ../scss/style.scss */
         .sponsor-footer .sponsor-logo:hover {
           -webkit-filter: grayscale(0);
           -moz-filter: grayscale(0);
           filter: grayscale(0); } }
-  /* line 635, ../scss/style.scss */
+  /* line 637, ../scss/style.scss */
   .sponsor-footer .bx-wrapper {
     width: 87rem;
     float: right;
     margin: 0; }
 
-/* line 642, ../scss/style.scss */
+/* line 644, ../scss/style.scss */
 .footer-inner {
   margin: 2em auto; }
   /* line 20, ../scss/_bits.scss */
@@ -1654,30 +1659,30 @@ div.EnFolksStreamItem {
     display: table;
     clear: both; }
 
-/* line 646, ../scss/style.scss */
+/* line 648, ../scss/style.scss */
 .copyright {
   color: #7b7b7b;
   float: left;
   margin-top: 1em; }
 
-/* line 651, ../scss/style.scss */
+/* line 653, ../scss/style.scss */
 .sharing {
   float: right; }
   @media (min-width: 25em) {
-    /* line 651, ../scss/style.scss */
+    /* line 653, ../scss/style.scss */
     .sharing {
       min-width: 40em; } }
-  /* line 656, ../scss/style.scss */
+  /* line 658, ../scss/style.scss */
   .sharing .stay-connected {
     border-right: 1px solid #e1e1e1;
     font-size: 1.2em;
     margin-right: 1rem;
     padding: 1rem; }
     @media (min-width: 25em) {
-      /* line 656, ../scss/style.scss */
+      /* line 658, ../scss/style.scss */
       .sharing .stay-connected {
         float: left; } }
-  /* line 665, ../scss/style.scss */
+  /* line 667, ../scss/style.scss */
   .sharing .share-button {
     width: 2.6em;
     height: 2.6em;
@@ -1688,31 +1693,31 @@ div.EnFolksStreamItem {
     display: block;
     float: left;
     margin: 0.3em 1em; }
-    /* line 671, ../scss/style.scss */
+    /* line 673, ../scss/style.scss */
     .sharing .share-button:last-child {
       margin-right: 0; }
-  /* line 675, ../scss/style.scss */
+  /* line 677, ../scss/style.scss */
   .sharing .facebook-button {
     background-position: -1px -68px; }
-  /* line 678, ../scss/style.scss */
+  /* line 680, ../scss/style.scss */
   .sharing .twitter-button {
     background-position: -28px -68px; }
-  /* line 681, ../scss/style.scss */
+  /* line 683, ../scss/style.scss */
   .sharing .linkedin-button {
     background-position: -56px -68px; }
-  /* line 684, ../scss/style.scss */
+  /* line 686, ../scss/style.scss */
   .sharing .newsletter-button {
     background-position: -83px -68px; }
-  /* line 687, ../scss/style.scss */
+  /* line 689, ../scss/style.scss */
   .sharing .contact-button {
     background-position: -110px -68px; }
-  /* line 690, ../scss/style.scss */
+  /* line 692, ../scss/style.scss */
   .sharing .addthis-button {
     background-position: -137px -68px; }
 
 /* =Media
 ----------------------------------------------- */
-/* line 701, ../scss/style.scss */
+/* line 703, ../scss/style.scss */
 .site-header img,
 .entry-content img,
 .comment-content img,
@@ -1720,7 +1725,7 @@ div.EnFolksStreamItem {
   max-width: 100%;
   /* Fluid images for posts, comments, and widgets */ }
 
-/* line 707, ../scss/style.scss */
+/* line 709, ../scss/style.scss */
 .site-header img,
 .entry-content img,
 img[class*="align"],
@@ -1728,7 +1733,7 @@ img[class*="wp-image-"] {
   height: auto;
   /* Make sure images with WordPress-added height and width attributes are scaled correctly */ }
 
-/* line 712, ../scss/style.scss */
+/* line 714, ../scss/style.scss */
 .site-header img,
 .entry-content img,
 img.size-full {
@@ -1736,7 +1741,7 @@ img.size-full {
   width: auto;
   /* Prevent stretching of full-size images with height and width attributes in IE8 */ }
 
-/* line 717, ../scss/style.scss */
+/* line 719, ../scss/style.scss */
 .entry-content img.wp-smiley,
 .comment-content img.wp-smiley {
   border: none;
@@ -1744,47 +1749,47 @@ img.size-full {
   margin-top: 0;
   padding: 0; }
 
-/* line 723, ../scss/style.scss */
+/* line 725, ../scss/style.scss */
 .wp-caption {
   border: 1px solid #cccccc;
   max-width: 100%; }
 
-/* line 729, ../scss/style.scss */
+/* line 731, ../scss/style.scss */
 .wp-caption.aligncenter,
 .wp-caption.alignleft,
 .wp-caption.alignright {
   margin-bottom: 1.5em; }
 
-/* line 732, ../scss/style.scss */
+/* line 734, ../scss/style.scss */
 .wp-caption img {
   display: block;
   margin: 1.2% auto 0;
   max-width: 98%; }
 
-/* line 737, ../scss/style.scss */
+/* line 739, ../scss/style.scss */
 .wp-caption-text {
   text-align: center; }
 
-/* line 740, ../scss/style.scss */
+/* line 742, ../scss/style.scss */
 .wp-caption .wp-caption-text {
   margin: 0.8075em 0; }
 
-/* line 743, ../scss/style.scss */
+/* line 745, ../scss/style.scss */
 .site-content .gallery {
   margin-bottom: 1.5em; }
 
-/* line 748, ../scss/style.scss */
+/* line 750, ../scss/style.scss */
 .site-content .gallery a img {
   border: none;
   height: auto;
   max-width: 90%; }
 
-/* line 753, ../scss/style.scss */
+/* line 755, ../scss/style.scss */
 .site-content .gallery dd {
   margin: 0; }
 
 /* Make sure embeds and iframes fit their containers */
-/* line 764, ../scss/style.scss */
+/* line 766, ../scss/style.scss */
 embed,
 iframe,
 object {
@@ -1792,17 +1797,17 @@ object {
 
 /* =Navigation
 ----------------------------------------------- */
-/* line 772, ../scss/style.scss */
+/* line 774, ../scss/style.scss */
 .site-content .site-navigation {
   margin: 0 0 1.5em;
   overflow: hidden; }
 
-/* line 776, ../scss/style.scss */
+/* line 778, ../scss/style.scss */
 .site-content .nav-previous {
   float: left;
   width: 50%; }
 
-/* line 780, ../scss/style.scss */
+/* line 782, ../scss/style.scss */
 .site-content .nav-next {
   float: right;
   text-align: right;
@@ -1812,11 +1817,11 @@ object {
 ----------------------------------------------- */
 /* =Widgets
 ----------------------------------------------- */
-/* line 795, ../scss/style.scss */
+/* line 797, ../scss/style.scss */
 .widget {
   margin: 0 0 1.5em; }
 
 /* Search widget */
-/* line 800, ../scss/style.scss */
+/* line 802, ../scss/style.scss */
 #searchsubmit {
   display: none; }

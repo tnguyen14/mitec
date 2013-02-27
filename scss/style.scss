@@ -489,8 +489,8 @@ div[class^="gform_confirmation_message"] {
 	@include group;
 	@include list-item;
 	img {
+		margin: 0 1rem 1rem 0;
 		@media (min-width: 25em) { // 400px / 16
-			max-width: 15%;
 			float: left;
 		}
 		@media (min-width: 60em ) { //960px / 16
@@ -499,12 +499,14 @@ div[class^="gform_confirmation_message"] {
 	}
 	.member-description {
 		float: right;
+		width: 100%;
 		@media (min-width: 25em) { // 400px / 16
 			float: right;
-			width: 70%;
-			margin-left: 5%;
 		}
-		@media (min-width: 60em) {// 960px / 16
+		@media (min-width: 30em) {
+			width: 70%;
+		}
+		@media (min-width: 37.5em) {// 600px / 16
 			width: 76%;
 		}
 		h1 {
