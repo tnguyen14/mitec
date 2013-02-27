@@ -74,7 +74,13 @@
 		}
 		box-shadow: 0 5px 6px -4px rgba(0,0,0,0.2);
 		.links-toggle {
+			color: $maroon-text;
+			cursor: pointer;
 			display: none;
+			font-size: 1.4em;
+			padding: 1rem 0 0.5rem;
+			text-align: center;
+			text-transform: uppercase;
 		}
 		ul {
 			@media (min-width: 50em) {
@@ -84,6 +90,8 @@
 			@include group;
 		}
 		li {
+			list-style: none;
+			padding: 1rem 0 0.5rem;
 			text-align: center;
 			@media (min-width: 44.75em) {
 				float: left;
@@ -96,9 +104,6 @@
 			@media (min-width: 50em) {
 				margin-left: 4.9em;
 			}
-			list-style: none;
-			padding-top: 1rem;
-			padding-bottom: 0.5rem;
 			&:before {
 				background: url(../inc/images/assets.png);
 				content:  "";
@@ -114,6 +119,9 @@
 				color: $gray-text;
 				font-size: 1.4em;
 				text-transform: uppercase;
+				&:hover {
+					color: $darker-gray-text;
+				}
 			}
 			&:nth-child(2),
 			&:first-child + li {
