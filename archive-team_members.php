@@ -8,16 +8,19 @@
 
 get_header(); ?>
 <div class="cover-photo">
-		<?php// @TODO: add a default cover photo here ?>
+		<?php // Use post thumbnail of page 26 - About page
+		if ( has_post_thumbnail( 26 ) ) {
+			echo get_the_post_thumbnail( 26, 'cover-photo' );
+		} ?>
 </div><!--cover-photo-->
 <div class="content-wrap">
-	
+
 	<div id="primary" class="content-area">
 		<div id="content" class="site-content" role="main">
 			<article class="page team_members-archive hentry ">
 				<header class="entry-header">
 					<h1 class="entry-title">
-						<?php 
+						<?php
 						/*
 						$term = get_term_by('slug', 'executive-team', 'teams');
 						if ($term) {
@@ -31,7 +34,7 @@ get_header(); ?>
 				<div class="entry-content team-members">
 					<?php while ( have_posts() ) : the_post(); ?>
 
-						<?php //get_template_part( 'content', 'page' ); 
+						<?php //get_template_part( 'content', 'page' );
 
 						?>
 						<div class="team-member">
@@ -46,7 +49,7 @@ get_header(); ?>
 							$grav_url = "http://www.gravatar.com/avatar/" . md5( strtolower( trim( $email ) ) ) . '?d=' . $default . '&s='  . $size;
 							if (!$image) : ?>
 								<img src="<?php echo $grav_url; ?>" alt="<?php echo $name;?>" title=<?php echo $name;?> width="120" height="120" />
-							<?php 
+							<?php
 							else :
 								wp_get_attachment_image($image, 'team-member');
 							endif;?>
