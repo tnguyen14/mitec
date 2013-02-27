@@ -196,20 +196,7 @@
 			padding: 0 7%;
 			@include group;
 			ul {
-				box-shadow: 0 3px 3px rgba(0,0,0,0.2);
 				display: none;
-				float: left;
-				position: absolute;
-				top: 1.5rem;
-				left: 0;
-				z-index: 99999;
-				ul {
-					left: 100%;
-					top: 0;
-				}
-				a {
-					width: 200px;
-				}
 			}
 			@media (min-width: $big-screen) {
 				padding: 0;
@@ -231,7 +218,9 @@
 				}
 			}
 			&:last-child {
-				border-right: 2.7px solid $dark-gold;
+				@media (min-width: 35em) {
+					border-right: 2.7px solid $dark-gold;
+				}
 			}
 			&:hover {
 				background-color: $dark-gold;
