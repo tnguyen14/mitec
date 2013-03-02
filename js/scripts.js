@@ -1,11 +1,12 @@
 jQuery(document).ready(function($) {
 
-	$(".homepage-feature .homepage-carousel").scrollable({ circular: true }).autoscroll(10000).navigator(".bottom-tabs");
-	/*$(".homepage-feature").bxSlider({
+	//$(".homepage-feature .homepage-carousel").scrollable({ circular: true }).autoscroll(10000).navigator(".bottom-tabs");
+	$(".homepage-feature .features").bxSlider({
 		auto: true,
-		pause: 10000,
-		pagerSelector: '.bottom-tabs'
-	});*/
+		controls: false,
+		pause: 8000,
+		pagerCustom: '.bottom-tabs'
+	});
 	$(".sloan-carousel").bxSlider({
 		auto: true,
 		pause: 8000,
@@ -23,5 +24,4 @@ jQuery(document).ready(function($) {
 		controls: false
 	});
 
-	$('.EnFolksListItem span[id^="EnFolksScoreSpan"] a img').attr("src", "huh?");
 });

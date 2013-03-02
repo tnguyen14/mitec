@@ -228,6 +228,9 @@
 				border-left: 1.4px solid $dark-gold;
 				border-right: 1.4px solid $dark-gold;
 				float: left;
+				width: 14rem;
+			}
+			@media (min-width: 58.125em) { // 930px
 				width: 16rem;
 			}
 			position: relative;
@@ -261,7 +264,11 @@
 			font-size: 1.6rem;
 			line-height: 1;
 			display: block;
-			padding: 0.9375em 1.25em; // 15/16 = 0.9375, 20/16 = 1.25
+			padding: 0.9375em 0.5em; // 15/16 = 0.9375, 20/16 = 1.25
+			@media (min-width: 58.125em) {
+				padding: 0.9375em 1.25em;
+			}
+
 			text-align: center;
 			text-transform: uppercase;
 			&:hover {
@@ -630,19 +637,26 @@ div[class^="gform_confirmation_message"] {
 	@include group;
 	h1 {
 		color: $maroon-text;
-		float: left;
 		font-size: 1.5rem;
-		padding-top: 5rem;
-		text-align: right;
-		width: 10.5rem;
-		height: 7rem;
+		margin: 0 auto;
+		padding: 2rem 0 2rem;
+		width: 16rem;
+		@media (min-width: 61.25em) { // 980px
+			float: left;
+			height: 7rem;
+			max-width: 10.5rem;
+			padding: 5rem 0 0;
+			text-align: right;
+			width: 12%;
+		}
+
 	}
 	.sponsor-logo {
 		cursor: pointer;
 		float: left;
-		width: 17.5rem;
 		height: 12rem;
 		background-repeat: no-repeat;
+		width: 17.5rem;
 		@media (min-width: 37.5em) { // 600px / 16px
 			@include filter(grayscale(100%));
 			&:hover {
@@ -651,8 +665,13 @@ div[class^="gform_confirmation_message"] {
 		}
 	}
 	.bx-wrapper {
-		width: 87rem;
-		float: right;
+		@media (min-width: 61.25em) { //980px
+			float: right;
+			width: 88%;
+		}
+		@media (min-width: $big-screen) {
+			width: 87rem;
+		}
 		margin: 0;
 	}
 }

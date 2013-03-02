@@ -43,13 +43,8 @@ get_header(); ?>
 				<div class="tabs-wrap">
 					<div class="bottom-tabs">
 						<?php $count = count($features);
-							for ($i = 1; $i <= $count; $i++) {
-								if ($i == 1) {
-									echo '<a class="tab tab-' . $count . ' active" href="#feature-1" data-slide-index="' . $i . '"></a>';
-								}
-								else {
-									echo '<a class="tab tab-'.$count.'" href="#feature-' . $i . '" data-slide-index=" ' . $i . ' "></a>';
-								}
+							for ($i = 0; $i < $count; $i++) {
+								echo '<a class="tab tab-'.$count.'" href="" data-slide-index="' . $i . '"></a>';
 							} ?>
 					</div>
 				</div><!--bottom-tabs-->
