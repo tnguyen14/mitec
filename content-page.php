@@ -17,13 +17,13 @@
 		<?php the_content(); ?>
 
 		<?php /* Presentations - Communities page */
-		if (get_field('presentations_subheadline')):?>
+		if ( get_field( 'presentations_subheadline' ) ):?>
 		<section class="presentations">
 			<h1>Presentations</h1>
-			<p><?php the_field('presentations_subheadline');?></p>
-			<?php if (get_field('presentations')):
-				$presentations = get_field('presentations');
-				foreach ($presentations as $prez):?>
+			<p><?php the_field( 'presentations_subheadline' );?></p>
+			<?php if ( get_field( 'presentations' ) ):
+				$presentations = get_field( 'presentations' );
+				foreach ( $presentations as $prez ):?>
 					<div class="presentation">
 						<h1><?php echo $prez['title'];?></h1>
 						<p><?php echo $prez['description'];?></p>
@@ -40,7 +40,7 @@
 
 
 		<?php /* Calendar page */
-		if (is_page('Calendar')):?>
+		if ( is_page( 'Calendar' ) ):?>
 			<div style="display:none">
 				<?php
 				echo do_shortcode( '[energyfolks_searchbar type=calendar-agenda]' );?>
@@ -50,27 +50,27 @@
 		endif; // end IF Calendar page ?>
 
 		<?php /* Bulletings Page */
-		if (is_page('Bulletins')):
+		if ( is_page( 'Bulletins' ) ):
 			echo do_shortcode( '[energyfolks type=bulletins-stream customcss=1]' );
 		endif; // end IF Bulletins page ?>
 
 		<?php /* Blog Page */
-		if (is_page('Blog')):
+		if ( is_page( 'Blog' ) ):
 			echo do_shortcode( '[energyfolks type=blog]' );
 		endif; // end IF Blog page ?>
 
 		<?php /* Jobs Page */
-		if (is_page('Jobs')):
+		if ( is_page( 'Jobs' ) ):
 			echo do_shortcode( '[energyfolks type=jobs restricttothread=6]' );
 		endif; // end IF Jobs page ?>
 
 		<?php /* Membership List Page */
-		if (is_page('Membership List')):
+		if ( is_page( 'Membership List' ) ):
 			echo do_shortcode( '[energyfolks type=users restricttothread=21]' );
 		endif; // end IF Membership List page ?>
 
 		<?php /* Sponsors Page */
-		if (is_page('Sponsors')):
+		if ( is_page( 'Sponsors' ) ):
 			$sponsors = get_field('sponsors');
 			foreach ($sponsors as $sponsor):
 				$sponsor_image = wp_get_attachment_image($sponsor['sponsor_image'], 'sponsor-logo');?>
@@ -82,24 +82,26 @@
 			<?php endforeach;
 		endif; // end IF Sponsors Page
 		?>
-
+		<?php if ( is_page( 'Contact' ) ):
+			echo '<p>Please contact us at this address: <a href="' . antispambot( get_field( 'contact_email', 'options' ), 1 ) . '">' . antispambot( get_field( 'contact_email', 'options' ) ) . '</p>';
+		endif; ?>
 		<?php /* Sloan About Us */
-		if (is_page('About Us')):
+		if ( is_page( 'About Us' ) ):
 			$members = get_field('members');
-		if ($members): ?>
-			<div class="sloan-about-us">
+			if ( $members ): ?>
+				<div class="sloan-about-us">
 
-			<?php
-			foreach ($members as $member): ?>
-				<div class="team-member">
-					<div class="member-description">
-						<h1><?php echo $member['name'] . ' - ' . $member['position']; ?></h1>
-						<?php echo $member['description'];?>
-					</div>
-				</div><!-- .team-member -->
-			<?php endforeach; ?>
-			</div><!-- .sloan-about-us -->
-		<?php endif; // end IF members
+				<?php
+				foreach ( $members as $member ): ?>
+					<div class="team-member">
+						<div class="member-description">
+							<h1><?php echo $member['name'] . ' - ' . $member['position']; ?></h1>
+							<?php echo $member['description'];?>
+						</div>
+					</div><!-- .team-member -->
+				<?php endforeach; ?>
+				</div><!-- .sloan-about-us -->
+			<?php endif; // end IF members
 
 		endif; // end IF Sloan About Us
 		?>

@@ -130,40 +130,36 @@ p {
     font-style: normal;
     font-family: "MuseoSansW01-500Italic", sans-serif; }
 
-/*
-ul, ol {
-	margin: 0 0 1.5em 3em;
-}*/
-/* line 38, ../scss/_global.scss */
+/* line 34, ../scss/_global.scss */
 ul ul, ol ol, ul ol, ol ul {
   margin-bottom: 0;
   margin-left: 1.5em; }
 
-/* line 42, ../scss/_global.scss */
+/* line 38, ../scss/_global.scss */
 dt {
   font-weight: bold; }
 
-/* line 45, ../scss/_global.scss */
+/* line 41, ../scss/_global.scss */
 dd {
   margin: 0 1.5em 1.5em; }
 
-/* line 48, ../scss/_global.scss */
+/* line 44, ../scss/_global.scss */
 b, strong {
   font-weight: bold; }
 
-/* line 51, ../scss/_global.scss */
+/* line 47, ../scss/_global.scss */
 dfn, cite, em, i {
   font-style: italic; }
 
-/* line 54, ../scss/_global.scss */
+/* line 50, ../scss/_global.scss */
 blockquote {
   margin: 0 1.5em; }
 
-/* line 57, ../scss/_global.scss */
+/* line 53, ../scss/_global.scss */
 address {
   margin: 0 0 1.5em; }
 
-/* line 60, ../scss/_global.scss */
+/* line 56, ../scss/_global.scss */
 pre {
   background: #eee;
   font-family: "Courier 10 Pitch", Courier, monospace;
@@ -175,21 +171,21 @@ pre {
   overflow: auto;
   max-width: 100%; }
 
-/* line 71, ../scss/_global.scss */
+/* line 67, ../scss/_global.scss */
 code, kbd, tt, var {
   font: 15px Monaco, Consolas, "Andale Mono", "DejaVu Sans Mono", monospace; }
 
-/* line 74, ../scss/_global.scss */
+/* line 70, ../scss/_global.scss */
 abbr, acronym {
   border-bottom: 1px dotted #666666;
   cursor: help; }
 
-/* line 78, ../scss/_global.scss */
+/* line 74, ../scss/_global.scss */
 mark, ins {
   background: #fff9c0;
   text-decoration: none; }
 
-/* line 83, ../scss/_global.scss */
+/* line 79, ../scss/_global.scss */
 sup,
 sub {
   font-size: 75%;
@@ -198,40 +194,40 @@ sub {
   position: relative;
   vertical-align: baseline; }
 
-/* line 90, ../scss/_global.scss */
+/* line 86, ../scss/_global.scss */
 sup {
   bottom: 1ex; }
 
-/* line 93, ../scss/_global.scss */
+/* line 89, ../scss/_global.scss */
 sub {
   top: .5ex; }
 
-/* line 96, ../scss/_global.scss */
+/* line 92, ../scss/_global.scss */
 small {
   font-size: 75%; }
 
-/* line 99, ../scss/_global.scss */
+/* line 95, ../scss/_global.scss */
 big {
   font-size: 125%; }
 
-/* line 102, ../scss/_global.scss */
+/* line 98, ../scss/_global.scss */
 figure {
   margin: 0; }
 
-/* line 105, ../scss/_global.scss */
+/* line 101, ../scss/_global.scss */
 table {
   margin: 0 0 1.5em;
   width: 100%; }
 
-/* line 109, ../scss/_global.scss */
+/* line 105, ../scss/_global.scss */
 th {
   font-weight: bold; }
 
-/* line 112, ../scss/_global.scss */
+/* line 108, ../scss/_global.scss */
 img {
   vertical-align: middle; }
 
-/* line 118, ../scss/_global.scss */
+/* line 114, ../scss/_global.scss */
 button,
 input,
 select,
@@ -245,7 +241,7 @@ textarea {
   *vertical-align: middle;
   /* Improves appearance and consistency in all browsers */ }
 
-/* line 125, ../scss/_global.scss */
+/* line 121, ../scss/_global.scss */
 button,
 input {
   line-height: normal;
@@ -253,7 +249,7 @@ input {
   *overflow: visible;
   /* Corrects inner spacing displayed oddly in IE6/7 */ }
 
-/* line 132, ../scss/_global.scss */
+/* line 128, ../scss/_global.scss */
 button,
 html input[type="button"],
 input[type="reset"],
@@ -276,7 +272,7 @@ input[type="submit"] {
   padding: 1.12em 1.5em 1em;
   text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8); }
 
-/* line 152, ../scss/_global.scss */
+/* line 148, ../scss/_global.scss */
 button:hover,
 html input[type="button"]:hover,
 input[type="reset"]:hover,
@@ -286,7 +282,7 @@ input[type="submit"]:hover {
   -moz-box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02);
   box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.8), inset 0 15px 17px rgba(255, 255, 255, 0.8), inset 0 -5px 12px rgba(0, 0, 0, 0.02); }
 
-/* line 165, ../scss/_global.scss */
+/* line 161, ../scss/_global.scss */
 button:focus,
 html input[type="button"]:focus,
 input[type="reset"]:focus,
@@ -300,7 +296,7 @@ input[type="submit"]:active {
   -moz-box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15);
   box-shadow: inset 0 -1px 0 rgba(255, 255, 255, 0.5), inset 0 2px 5px rgba(0, 0, 0, 0.15); }
 
-/* line 172, ../scss/_global.scss */
+/* line 168, ../scss/_global.scss */
 input[type="checkbox"],
 input[type="radio"] {
   box-sizing: border-box;
@@ -308,7 +304,7 @@ input[type="radio"] {
   padding: 0;
   /* Addresses excess padding in IE8/9 */ }
 
-/* line 176, ../scss/_global.scss */
+/* line 172, ../scss/_global.scss */
 input[type="search"] {
   -webkit-appearance: textfield;
   /* Addresses appearance set to searchfield in S5, Chrome */
@@ -317,19 +313,19 @@ input[type="search"] {
   /* Addresses box sizing set to border-box in S5, Chrome (include -moz to future-proof) */
   box-sizing: content-box; }
 
-/* line 182, ../scss/_global.scss */
+/* line 178, ../scss/_global.scss */
 input[type="search"]::-webkit-search-decoration {
   /* Corrects inner padding displayed oddly in S5, Chrome on OSX */
   -webkit-appearance: none; }
 
-/* line 186, ../scss/_global.scss */
+/* line 182, ../scss/_global.scss */
 button::-moz-focus-inner,
 input::-moz-focus-inner {
   /* Corrects inner padding and border displayed oddly in FF3/4 www.sitepen.com/blog/2008/05/14/the-devils-in-the-details-fixing-dojos-toolbar-buttons/ */
   border: 0;
   padding: 0; }
 
-/* line 192, ../scss/_global.scss */
+/* line 188, ../scss/_global.scss */
 input[type=text],
 input[type=email],
 textarea {
@@ -337,18 +333,18 @@ textarea {
   border: 1px solid #cccccc;
   border-radius: 3px; }
 
-/* line 199, ../scss/_global.scss */
+/* line 195, ../scss/_global.scss */
 input[type=text]:focus,
 input[type=email]:focus,
 textarea:focus {
   color: #111; }
 
-/* line 203, ../scss/_global.scss */
+/* line 199, ../scss/_global.scss */
 input[type=text],
 input[type=email] {
   padding: 3px; }
 
-/* line 206, ../scss/_global.scss */
+/* line 202, ../scss/_global.scss */
 textarea {
   overflow: auto;
   /* Removes default vertical scrollbar in IE6/7/8/9 */
@@ -358,26 +354,13 @@ textarea {
   width: 98%; }
 
 /* Links */
-/* line 215, ../scss/_global.scss */
+/* line 211, ../scss/_global.scss */
 a {
   text-decoration: none;
-  color: #dcb000;
-  /*
-  color: royalblue;
-  &:visited {
-  	color: purple;
-  }
-  &:hover {
-  	text-decoration: underline;
-  }
-  &:hover,
-  &:focus,
-  &:active {
-  	color: midnightblue;
-  }*/ }
+  color: #dcb000; }
 
 /* BxSlider */
-/* line 234, ../scss/_global.scss */
+/* line 217, ../scss/_global.scss */
 .bx-wrapper .bx-viewport {
   box-shadow: none;
   border: none;
@@ -385,26 +368,26 @@ a {
   background: none; }
 
 /* Alignment */
-/* line 242, ../scss/_global.scss */
+/* line 225, ../scss/_global.scss */
 .alignleft {
   display: inline;
   float: left;
   margin-right: 1.5em; }
 
-/* line 247, ../scss/_global.scss */
+/* line 230, ../scss/_global.scss */
 .alignright {
   display: inline;
   float: right;
   margin-left: 1.5em; }
 
-/* line 252, ../scss/_global.scss */
+/* line 235, ../scss/_global.scss */
 .aligncenter {
   clear: both;
   display: block;
   margin: 0 auto; }
 
 /* Text meant only for screen readers */
-/* line 259, ../scss/_global.scss */
+/* line 242, ../scss/_global.scss */
 .assistive-text {
   clip: rect(1px 1px 1px 1px);
   /* IE6, IE7 */
