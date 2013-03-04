@@ -37,9 +37,11 @@ jQuery( document ).ready( function( $ ) {
 	};
 
 	// Check viewport width on first load.
-	if ( $( window ).width() < 560 ) {
-		$.fn.smallMenu();
+	if ( $( window ).width() < 716 ) {
 		$.fn.topLinksCollapse();
+	}
+	if ( $( window ).width() < 730 ) {
+		$.fn.smallMenu();
 	}
 
 	// Check viewport width when user resizes the browser window.
@@ -51,12 +53,15 @@ jQuery( document ).ready( function( $ ) {
 		}
 
 		timeout = setTimeout( function() {
-			if ( browserWidth < 560 ) {
-				$.fn.smallMenu();
+			if ( browserWidth < 716 ) {
 				$.fn.topLinksCollapse();
 			} else {
-				$.fn.smallMenuRemove();
 				$.fn.topLinksCollapseRemove();
+			}
+			if (browserWidth < 730 ) {
+				$.fn.smallMenu();
+			} else {
+				$.fn.smallMenuRemove();
 			}
 		}, 200 );
 	} );
