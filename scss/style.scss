@@ -285,7 +285,7 @@
 				font-size: 1.5rem;
 			}
 			@media (min-width: 58.75em) { // 940px
-				padding: 0.9375em 1.25em;
+				padding: 0.9375em 1.2em;
 			}
 			@media (min-width: $big-screen) {
 				font-size: 1.6rem;
@@ -562,6 +562,7 @@ div[class^="gform_confirmation_message"] {
 .sponsor-single {
 	margin-bottom: 1rem;
 	@include list-item;
+	@include group;
 	img {
 		float: left;
 		margin: 0 1rem 1rem 0;

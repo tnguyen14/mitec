@@ -40,7 +40,8 @@
 
 
 		<?php /* Calendar page */
-		if ( is_page( 'Calendar' ) ):?>
+		if ( is_page( 'Calendar' ) ):
+			// the display:none div is required to show the top search bar ?>
 			<div style="display:none">
 				<?php
 				echo do_shortcode( '[energyfolks_searchbar type=calendar-agenda]' );?>
@@ -51,7 +52,12 @@
 
 		<?php /* Bulletings Page */
 		if ( is_page( 'Bulletins' ) ):
-			echo do_shortcode( '[energyfolks type=bulletins-stream customcss=1]' );
+			// the display:none div is required to show the top search bar ?>
+			<div style="display:none">
+				<?php
+				echo do_shortcode( '[energyfolks_searchbar type=bulletins-stream]' );?>
+			</div>
+			<?php echo do_shortcode( '[energyfolks type=bulletins-stream customcss=1]' );
 		endif; // end IF Bulletins page ?>
 
 		<?php /* Blog Page */
@@ -61,7 +67,12 @@
 
 		<?php /* Jobs Page */
 		if ( is_page( 'Jobs' ) ):
-			echo do_shortcode( '[energyfolks type=jobs restricttothread=6]' );
+			// the display:none div is required to show the top search bar ?>
+			<div style="display:none">
+				<?php
+				echo do_shortcode( '[energyfolks_searchbar type=jobs]' );?>
+			</div>
+			<?php echo do_shortcode( '[energyfolks type=jobs]' );
 		endif; // end IF Jobs page ?>
 
 		<?php /* Membership List Page */
@@ -76,7 +87,7 @@
 				$sponsor_image = wp_get_attachment_image($sponsor['sponsor_image'], 'sponsor-logo');?>
 				<div class="sponsor-single">
 					<?php echo $sponsor_image; ?>
-					<h3><?php echo $sponsor['sponsor_name'];?></h3>
+					<a href="<?php echo $sponsor['sponsor_link'];?>"><h3><?php echo $sponsor['sponsor_name'];?></h3></a>
 					<p><?php echo $sponsor['sponsor_description'];?></p>
 				</div><!-- .sponsor-single -->
 			<?php endforeach;

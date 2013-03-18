@@ -73,7 +73,7 @@ $page_title = sanitize_title(get_the_title());?>
 
 		<div class="main-header">
 			<a class="site-title" href="<?php echo home_url( '/' ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home"><?php bloginfo( 'name' ); ?></a>
-			<div class="member-login"><a href="#">Member Log In</a></div>
+			<div class="member-login"><a href="https://www.energyfolks.com/accounts/Login">Member Log In</a></div>
 		</div><!-- .main-header -->
 
 		<div class="nav-wrapper">
