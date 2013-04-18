@@ -70,20 +70,29 @@ get_header(); ?>
 						<?php endif;?>
 						<div class="homepage-event-feed">
 							<h1>Events Calendar</h1>
-							<?php $events = get_field( 'featured_events' );
+							<?php $events = get_ef_events( 'https://www.energyfolks.com/calendar/json/21/0/0' );
 							if ( $events ):
+								$num_events = 4;
+								$i = 0;
+								date_default_timezone_set('America/New_York');
 								foreach ( $events as $event ) :
-									$date = DateTime::createFromFormat( 'Ymd', $event['event_date'] );
+									if ( $i < $num_events ):
+										$event_start =  $event->start ;
 								?>
-									<div class="event">
-										<div class="event-date">
-											<span class="month"><?php echo $date->format( 'F' );?></span>
-											<span class="date"><?php echo $date->format( 'd' );?></span>
-										</div><!-- .event-date -->
-										<h2><?php echo $event['event_name'];?></h2>
-										<p><?php echo $event['event_description'];?> <a class="learn-more" href="<?php echo $event['event_link'];?>">Learn More</a></p>
-									</div><!-- .event -->
-								<?php endforeach; ?>
+										<div class="event">
+											<div class="event-date">
+												<span class="month"><?php echo date( 'F', $event_start );?></span>
+												<span class="date"><?php echo date( 'd', $event_start );?></span>
+											</div><!-- .event-date -->
+											<h2><?php echo $event->name;?></h2>
+											<p><?php echo $event->synopsis;?> <a class="learn-more" href="https://www.energyfolks.com/calendar">Learn More</a></p>
+										</div><!-- .event -->
+								<?php
+										$i++;
+									else :
+										break;
+									endif;
+								endforeach; ?>
 							<?php endif; ?>
 						</div><!--homepage-event-feed-->
 					</div><!--homepage-lower-content-->

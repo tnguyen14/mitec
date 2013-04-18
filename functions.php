@@ -116,7 +116,6 @@ function mitec_scripts() {
 
 
 	wp_enqueue_script( 'small-menu', get_template_directory_uri() . '/js/small-menu.js', array( 'jquery' ), '20120206', true );
-	//wp_enqueue_script( 'prefix-free', get_template_directory_uri(). '/js/prefixfree.min.js', array(), '', true);
 	wp_enqueue_script( 'jquery-tools', get_template_directory_uri(). '/js/jquery.tools.min.js', array( 'jquery' ), '1.2.7', true);
 	wp_enqueue_script( 'bxslider', get_template_directory_uri(). '/inc/bxslider/jquery.bxslider.min.js', array( 'jquery' ), '4.0', true);
 
@@ -158,4 +157,15 @@ function mitec_team_members_order( $query ) {
 	}
 }
 add_action( 'pre_get_posts', 'mitec_team_members_order' );
+
+/** Get calendar events in Boston are.
+ * Used in homepage
+ * @return JSON object
+ */
+function get_ef_events( $url ) {
+	$events_raw = file_get_contents( $url );
+	$events_json = json_decode( $events_raw );
+
+	return $events_json;
+}
 

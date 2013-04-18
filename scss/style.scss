@@ -563,6 +563,10 @@ div[class^="gform_confirmation_message"] {
 	margin-bottom: 1rem;
 	@include list-item;
 	@include group;
+	a {
+		display: block;
+		margin-left: 18rem;
+	}
 	img {
 		float: left;
 		margin: 0 1rem 1rem 0;
@@ -667,6 +671,7 @@ div[class^="gform_confirmation_message"] {
 
 	}
 	.sponsor-logo {
+		background-position: 0 2rem;
 		cursor: pointer;
 		float: left;
 		height: 12rem;

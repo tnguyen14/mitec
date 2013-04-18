@@ -24,4 +24,8 @@ jQuery(document).ready(function($) {
 		controls: false
 	});
 
+	$( '.member-login a' ).click( function(){
+		$( '#efadminbar_sub1' ).toggle();
+		return false;
+	} );
 });
