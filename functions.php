@@ -131,6 +131,15 @@ function mitec_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'mitec_scripts' );
 
+/** Excerpt more link
+ *
+ */
+function new_excerpt_more($more) {
+       global $post;
+	return '<a class="learn-more" href="'. get_permalink( $post->ID ) . '"> Learn More &raquo;</a>';
+}
+add_filter('excerpt_more', 'new_excerpt_more');
+
 /**
  * Implement the Custom Header feature
  */
@@ -168,4 +177,62 @@ function get_ef_events( $url ) {
 
 	return $events_json;
 }
+
+/** Add custom meta box for for featured post
+ *
+ */
+function mitec_add_featured_post_meta() {
+	$post_types = array( 'post' );
+	foreach ( $post_types as $post_type ) {
+		//  add_meta_box( $id, $title, $callback, $post_type, $context, $priority, $callback_args );
+		add_meta_box( 'mitec_featured_post', __( 'Featured Post' ), 'featured_post_meta_inner', $post_type, 'side', 'high' );
+	}
+}
+
+/** Display the featured post box content
+ *
+ */
+function featured_post_meta_inner() {
+	global $post;
+	// Use nonce for verification
+	// wp_nonce_field( $action, $name, $referer, $echo )
+	$nonce_name = 'mitec_featured_post_' . $post->ID . '_nonce';
+	$nonce_action = 'add_featured_post_' . $post->ID;
+	wp_nonce_field( $nonce_action, $nonce_name );
+
+	$meta_value = get_post_meta( $post->ID, 'mitec_blog_featured_post', true );
+	echo '<label for="featured_post">';
+	echo '<input type="checkbox" id="featured-post" name="mitec_blog_featured_post" value="1" ' . checked( 1, $meta_value, false ) . ' />';
+	echo ' Feature this post </label>';
+}
+
+function mitec_save_featured_post_meta( $post_id ) {
+	$nonce_name = 'mitec_featured_post_' . $post_id . '_nonce';
+	$nonce_action = 'add_featured_post_' . $post_id;
+
+	 // First we need to check if the current user is authorised to do this action.
+	if ( 'page' == $_POST['post_type'] ) {
+		if ( ! current_user_can( 'edit_page', $post_id ) ){
+			return;
+		}
+	} else {
+		if ( ! current_user_can( 'edit_post', $post_id ) ) {
+			return;
+		}
+	}
+	// wp_verify_nonce( $nonce, $action );
+	// Secondly we need to check if the user intended to change this value.
+	if ( ! isset( $_POST[$nonce_name] ) || ! wp_verify_nonce( $_POST[$nonce_name], $nonce_action ) ) {
+		return;
+	}
+
+	$meta_value = $_POST['mitec_blog_featured_post'];
+
+	// update_post_meta($post_id, $meta_key, $meta_value, $prev_value);
+	update_post_meta( $post_id, 'mitec_blog_featured_post', $meta_value );
+}
+
+add_action( 'add_meta_boxes', 'mitec_add_featured_post_meta' );
+add_action( 'save_post', 'mitec_save_featured_post_meta' );
+
 

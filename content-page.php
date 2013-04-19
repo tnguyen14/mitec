@@ -60,11 +60,6 @@
 			<?php echo do_shortcode( '[energyfolks type=bulletins-stream customcss=1]' );
 		endif; // end IF Bulletins page ?>
 
-		<?php /* Blog Page */
-		if ( is_page( 'Blog' ) ):
-			echo do_shortcode( '[energyfolks type=blog]' );
-		endif; // end IF Blog page ?>
-
 		<?php /* Jobs Page */
 		if ( is_page( 'Jobs' ) ):
 			// the display:none div is required to show the top search bar ?>

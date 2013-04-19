@@ -11,14 +11,14 @@
 			<?php /* Sidebar Area */
 
 			// Sidebar Nav
-			if (is_page() && !is_front_page() || is_post_type_archive( 'team_members' ) || is_tax( 'teams' )) : 
+			if ( ( is_page() && !is_front_page() ) || is_post_type_archive( 'team_members' ) || is_tax( 'teams' ) || is_home() || is_single() || is_category() || is_tag() ) :
 				$ancestors = get_post_ancestors($post->ID);
 
 				if ( is_post_type_archive( 'team_members' ) || is_tax( 'teams' )):
 					$ancestors[0] = 26; // 26 is About section
 				endif;
 
-				$top_page = ($ancestors) ? $ancestors[0] : $post->ID;
+				$top_page = ( $ancestors ) ? $ancestors[0] : $post->ID;
 				$args = array(
 					'child_of' => $top_page,
 					'title_li' => '',
@@ -26,7 +26,7 @@
 					'echo' => 0,
 					'depth' => 2
 				);
-				
+
 				$side_pages = wp_list_pages($args);
 				$url = get_bloginfo('url');
 
@@ -53,6 +53,19 @@
 					// prepend Executive Committee item to side pages
 					$side_pages = $exec_comm . $side_pages;
 				endif; // IF top page is 26
+
+				if ( is_home() || is_single() || is_category() || is_tag() ):
+					$cat_args = array(
+						'exclude'	=> 1, // exclude Executive Team
+						'hide_empty'=> 0,
+						'title_li'	=> '',
+						'echo'		=> 0
+					);
+					$categories = wp_list_categories( $cat_args );
+					//var_dump( $categories );
+					$categories = '<ul>' . $categories . '</ul>';
+					$side_pages = $categories;
+				endif; // IF is home or is single
 			endif;
 
 			if ($side_pages) : ?>
@@ -67,7 +80,7 @@
 			// Timely Content Module
 			?>
 				<aside class="timely-content">
-					<?php 
+					<?php
 					$home_id = 6;
 					if (get_field('use_custom_timely_content') ) :
 						$timely_header = get_field('timely_content_header');
@@ -84,22 +97,22 @@
 						<h1><?php echo $timely_header;?></h1>
 						<img src="<?php echo $timely_image[0];?>" width="<?php echo $timely_image[1];?>" height="<?php echo $timely_image[2];?>"/>
 						<p><?php echo $timely_support;?></p>
-						<a class="learn-more" href="<?php echo $timely_link;?>">Learn More</a>
+						<a class="learn-more" href="<?php echo $timely_link;?>">Learn More &raquo;</a>
 				</aside>
-				
+
 			<?php // Facebook Aside Module
 			?>
 				<aside class="facebook-sidebar">
 					<div class="facebook-outer">
-						<div class="fb-like-box" 
-							data-href="<?php echo esc_url(get_field('facebook_page', 'options'));?>" 
-							data-width="275" 
+						<div class="fb-like-box"
+							data-href="<?php echo esc_url(get_field('facebook_page', 'options'));?>"
+							data-width="275"
 							data-height="258"
-							data-show-faces="true" 
-							data-stream="false" 
+							data-show-faces="true"
+							data-stream="false"
 							data-header="false"
 							data-border-color="#FDFDFD">
-						</div> 
+						</div>
 					</div><!--facebookOuter-->
 				</aside><!--facebook-sidebar-->
 			<?php /*

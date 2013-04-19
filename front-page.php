@@ -61,8 +61,7 @@ get_header(); ?>
 									<?php $module_image = wp_get_attachment_image_src($module['module_image'], 'homepage-module');?>
 									<img src="<?php echo $module_image[0];?>" width="<?php echo $module_image[1];?>" height="<?php echo $module_image[2];?>"/>
 									<h2><?php echo $module['module_header'];?></h2>
-									<p><?php echo $module['module_text'];?></p>
-									<a class="learn-more" href="<?php echo $module['module_link'];?>">Learn More</a>
+									<p><?php echo $module['module_text'];?><a class="learn-more" href="<?php echo $module['module_link'];?>">Learn More &raquo;</a></p>
 								</div><!--homepage-module-->
 							<?php
 							endforeach; ?>
@@ -85,7 +84,7 @@ get_header(); ?>
 												<span class="date"><?php echo date( 'd', $event_start );?></span>
 											</div><!-- .event-date -->
 											<h2><?php echo $event->name;?></h2>
-											<p><?php echo $event->synopsis;?> <a class="learn-more" href="https://www.energyfolks.com/calendar">Learn More</a></p>
+											<p><?php echo $event->synopsis;?> <a class="learn-more" href="https://www.energyfolks.com/calendar">Learn More &raquo;</a></p>
 										</div><!-- .event -->
 								<?php
 										$i++;

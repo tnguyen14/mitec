@@ -366,63 +366,63 @@
 	}
 }
 
-.site-content {
-	.entry-header {
-		@include background-color($maroon, 0.75);
-		margin-left: -3px; // To make up for the box-shadow on the sidebar
-		padding: 1.5em 0 1em 5.7142857%; //38px / 665px;
-		width: 200rem;
-		.entry-title {
-			color: white;
-			font-size: 2.8em;
-			text-transform: uppercase;
-		}
+
+.entry-header {
+	@include background-color($maroon, 0.75);
+	margin-left: -3px; // To make up for the box-shadow on the sidebar
+	padding: 1.5em 0 1em 5.7142857%; //38px / 665px;
+	width: 200rem;
+	.entry-title {
+		color: white;
+		font-size: 2.8em;
+		text-transform: uppercase;
 	}
-	.entry-content {
-		padding-left: 5.2631579%; // 35px / 665px
-		line-height: 1.4;
-		h1 {
-			color: $maroon-text;
-			font-size: 2.8em;
-		}
-		h2 {
-			font-size: 1.9em;
-		}
-		h3 {
-			color: $maroon-text;
-			font-size: 1.5rem;
-		}
-		// add spacing for the subheadline (right after main headline)
-		h1+h2 {
-			margin-bottom: 2.5rem;
-		}
-		ul {
-			margin-bottom: 1.5rem;
-		}
-		p,
-		li {
-			color: $carbon;
-			font-size: 1.4em;
-			line-height: 1.5;
-		}
-		a {
-			//color: $gold-text;
-			&:hover {
-				text-decoration: underline;
-			}
-		}
+}
+.entry-content {
+	padding-left: 5.2631579%; // 35px / 665px
+	line-height: 1.4;
+	h1 {
+		color: $maroon-text;
+		font-size: 2.8em;
 	}
-	.presentation {
-		background-color: #f5f5f5;
-		padding: 1.5rem;
-		margin: 0 0 .8rem -1.5rem;
-		@include group;
-		h1 {
-			color: $maroon-text;
-			font-size: 1.5rem;
+	h2 {
+		font-size: 1.9em;
+	}
+	h3 {
+		color: $maroon-text;
+		font-size: 1.5rem;
+	}
+	// add spacing for the subheadline (right after main headline)
+	h1+h2 {
+		margin-bottom: 2.5rem;
+	}
+	ul {
+		margin-bottom: 1.5rem;
+	}
+	p,
+	li {
+		color: $carbon;
+		font-size: 1.4em;
+		line-height: 1.5;
+	}
+	a {
+		//color: $gold-text;
+		&:hover {
+			text-decoration: underline;
 		}
 	}
 }
+.presentation {
+	background-color: #f5f5f5;
+	padding: 1.5rem;
+	margin: 0 0 .8rem -1.5rem;
+	@include group;
+	h1 {
+		color: $maroon-text;
+		font-size: 1.5rem;
+	}
+}
+
 
 /* FORMS */
 .gform_heading {
@@ -518,6 +518,54 @@ div[class^="gform_confirmation_message"] {
 
 @import "_sloan";
 
+/* BLOG PAGE */
+.post-featured-image {
+	float: left;
+	margin: 0 1rem 1rem 0;
+	overflow: hidden;
+	img {
+		max-width: 100%;
+		height: auto;
+	}
+}
+.blog-post {
+	@include group;
+	@include list-item;
+	margin-bottom: 1.5rem;
+	.learn-more {
+		@include learn-more-link;
+		font-size: 0.8em;
+	}
+	.post-title {
+		color: black;
+		display: inline-block;
+		font-size: 1.8rem;
+		margin-bottom: 0.3em;
+	}
+	.post-date {
+		color: $maroon-text;
+		font-size: 1.4rem;
+		margin-bottom: 0;
+	}
+	.post-featured-image {
+		width: 20rem;
+		height: 13.33rem;
+	}
+	&.feature {
+		.post-featured-image {
+			width: 30rem;
+			height: 20rem;
+		}
+	}
+}
+
+.single-post {
+	.post-date {
+		color: black;
+		font-size: 1.7rem;
+	}
+}
+
 /* EXECUTIVE COMMITTEE PAGE */
 
 
@@ -600,12 +648,17 @@ div[class^="gform_confirmation_message"] {
 			display: block;
 			font-size: 1.4rem;
 			padding: 1.2rem 0 0.8rem 7.4074074%; // 20px / 270px
+			&:hover {
+				background-color: $light-gray;
+			}
 		}
 		&.current_page_item,
-		&.current-cat,
-		&:hover {
-			background-color: $light-gray;
+		&.current-cat {
+			> a {
+				background-color: $light-gray;
+			}
 		}
+
 	}
 }
 

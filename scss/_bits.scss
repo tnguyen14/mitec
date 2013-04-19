@@ -44,7 +44,9 @@ $medium-screen: 40em; // 640px
 // Learn more link style
 @mixin learn-more-link {
 	color:#ab8b0a;
+	display: inline-block;
 	font-size: 1.1em;
+	margin-left: 3px;
 	text-transform: uppercase;
 	&:hover {
 		text-decoration: underline;

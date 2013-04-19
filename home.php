@@ -1,6 +1,6 @@
 <?php
 /**
- * The Archive template file.
+ * The main template file.
  *
  * This is the most generic template file in a WordPress theme
  * and one of the two required files for a theme (the other being style.css).
@@ -24,10 +24,7 @@ get_header(); ?>
 		}?>
 </div><!--cover-photo-->
 <div class="content-wrap">
-		<?php
-			$term = get_queried_object();
-			$term_slug = $term ? $term->slug : '';
-		?>
+
 		<div id="primary" class="content-area">
 			<div id="content" class="site-content" role="main">
 
@@ -36,19 +33,11 @@ get_header(); ?>
 				</header><!-- .entry-header -->
 
 				<div class="entry-content blog-list">
-
 					<?php /* featured posts */
 					$featured = new WP_Query( array(
 						'post_type'		=> 'post',
 						'meta_key'		=> 'mitec_blog_featured_post',
-						'meta_value'	=> 1,
-						'tax_query' => array(
-								array(
-									'taxonomy' => 'category',
-									'field' => 'slug',
-									'terms' => $term_slug
-								)
-							)
+						'meta_value'	=> 1
 						) );
 					if ( $featured->have_posts() ) :
 						while ( $featured->have_posts() ) : $featured->the_post(); ?>
