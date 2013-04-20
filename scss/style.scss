@@ -755,12 +755,16 @@ div[class^="gform_confirmation_message"] {
 }
 .copyright {
 	color: $gray-text;
-	float: left;
-	margin-top: 1em;
+	text-align: center;
+	margin-bottom: 1rem;
+	@media (min-width: $medium-screen) {
+		float: left;
+		margin-top: 1em;
+	}
 }
 .sharing {
-	float: right;
 	@media (min-width: 25em) { // 400px / 16
+		float: right;
 		min-width: 40em;
 	}
 	.stay-connected {

@@ -239,8 +239,8 @@
 			position: relative;
 			text-align: center;
 			text-transform: uppercase;
-			background-color: #a9890a;
-			//@include background-color(#a9890a, 0.8);
+			//background-color: #a9890a;
+			@include background-color(#a9890a, 0.8);
 			@include box-shadow(0 1px 1px 1px rgba(0,0,0,0.2));
 		}
 		h2 {

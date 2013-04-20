@@ -71,7 +71,7 @@ get_header(); ?>
 							<h1>Events Calendar</h1>
 							<?php $events = get_ef_events( 'https://www.energyfolks.com/calendar/json/21/0/0' );
 							if ( $events ):
-								$num_events = 4;
+								$num_events = 2;
 								$i = 0;
 								date_default_timezone_set('America/New_York');
 								foreach ( $events as $event ) :
