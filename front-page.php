@@ -92,7 +92,10 @@ get_header(); ?>
 										break;
 									endif;
 								endforeach; ?>
-							<?php endif; ?>
+							<?php else:
+								echo 'No upcoming events.';
+
+							endif; // IF there are events ?>
 						</div><!--homepage-event-feed-->
 					</div><!--homepage-lower-content-->
 				</div><!--homepage-lower-wrap-->

@@ -1,9 +1,4 @@
-// Since Energy Folks plugin overwrite the window.onload event, so using their custom function instead.
-// To be updated back to jQuery once their plugin is updated
-
-//jQuery(document).ready(function($) {
-EnFolks_Add_Onload( function($) {
-	return function() {
+jQuery( document ).ready( function($) {
 	//$(".homepage-feature .homepage-carousel").scrollable({ circular: true }).autoscroll(10000).navigator(".bottom-tabs");
 	$(".homepage-feature .features").bxSlider({
 		auto: true,
@@ -33,10 +28,9 @@ EnFolks_Add_Onload( function($) {
 		pager: false,
 		controls: false
 	});
-
-	$( '.member-login a' ).click( function(){
+	// Since Energy Folks plugin overwrite the window.onload event, attaching click event listener to body
+	$( 'body' ).on( "click", ".member-login a", function(){
 		$( '#efadminbar_sub1' ).toggle();
 		return false;
 	} );
-};
-} (jQuery));
+});

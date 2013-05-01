@@ -31,10 +31,10 @@
 			<div class="copyright">© Copyright 2012 MIT Energy Club</div>
 			<div class="sharing">
 				<div class="stay-connected">Stay Connected</div>
-				<a class="share-button facebook-button" href="#" target="_blank" title="Facebook">Facebook</a>
-				<a class="share-button twitter-button" href="#" target="_blank" title="Twiiter">Twitter</a>
-				<a class="share-button linkedin-button" href="#" target="_blank" title="LinkedIn">LinkedIn</a>
-				<a class="share-button newsletter-button" href="#" target="_blank" title="Newsletter">Newsletter</a>
+				<a class="share-button facebook-button" href="https://www.facebook.com/pages/MIT-Energy-Club/164288253593384" target="_blank" title="Facebook">Facebook</a>
+				<a class="share-button twitter-button" href="https://twitter.com/mitenergyclub" target="_blank" title="Twiiter">Twitter</a>
+				<a class="share-button linkedin-button" href="http://www.linkedin.com/groups/MIT-Energy-Club-2320350/about" target="_blank" title="LinkedIn">LinkedIn</a>
+				<a class="share-button newsletter-button" href="http://visitor.r20.constantcontact.com/d.jsp?llr=9covq4hab&p=oi&m=1108085487706" target="_blank" title="Newsletter">Newsletter</a>
 				<a class="share-button contact-button" href="#" target="_blank" title="Contact">Contact</a>
 				<a class="share-button addthis-button" href="#" target="_blank" title="Share">Share</a>
 			</div><!--sharing-->
